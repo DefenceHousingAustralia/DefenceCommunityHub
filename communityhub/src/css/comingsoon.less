@@ -1,0 +1,262 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+@import "less/variables.less";
+@import "less/mixins.less";
+@import "less/normalize.less";
+@import "less/scaffolding.less";
+//@import "less/type.less";
+@import "less/grid.less";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+html {
+    background: @dha-blue-dark;
+}
+
+body {
+    background: @dha-blue-light url(bg.jpg) no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+
+       @media (max-width: @screen-sm-max) {
+      background-position: left top;
+    }
+}
+
+.footer {
+    background: transparent;
+}
+
+img.feature {
+    padding: 30px;
+    .fade-in();
+    @media (max-width: 2000px) {
+        width: 630px;
+    }
+}
+
+.container {
+    padding-top: 30px;
+    padding-bottom: 30px
+}
+
+h1.title {
+    text-align: left;
+    font-size: 100px;
+    font-weight: bold;
+    padding: 30px;
+    line-height: 1;
+    color: #000847;
+    .fade-in();
+    @media (max-width: 2000px) {
+        font-size: 3em;
+    }
+    @media (max-width: @screen-sm-max) {
+        font-size: 2em;
+        margin: 0
+    }
+}
+
+.lead {
+    font-size: 2em;
+    padding: 0 30px;
+
+
+   @media (max-width: @screen-sm-max) {
+        font-size:1.3em;margin:0;
+
+        br {display: none}
+    }
+
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeAndScale {
+    from {
+        opacity: 0;
+        transform: scale(.9, .9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+.fade-and-scale() {
+    animation-duration: .3s;
+    animation-name: fadeAndScale;
+    animation-timing-function: cubic-bezier(.71, .55, .62, 1.57);
+}
+
+.fade-in() {
+    opacity: 0;
+    /* make things invisible upon start */
+    -webkit-animation: fadeIn ease-in 1;
+    /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+    -webkit-animation-fill-mode: forwards;
+    /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.footer {
+    .clearfix;
+    padding: 60px 0;
+    color: #fff;
+    p {
+        color: #fff;
+        margin: 0;
+    }
+    @media (max-width: @screen-md-min) {
+        padding: 30px 0;
+        .container {
+            padding: 0;
+        }
+    }
+    background: @dha-blue-dark;
+    color: @black;
+    .copyright {
+        padding: 15px 0 0 0;
+        float: left;
+    }
+    .footer-left {
+        .clearfix();
+        .make-xs-column(12);
+        .make-md-column(5);
+        text-align: left;
+        li {
+            display: inline-block;
+            margin-left: 15px;
+            &:first-child {
+                margin-left: 0
+            }
+        }
+    }
+    ul {
+        list-style: none;
+        padding-left: 0;
+        a {
+            padding: 0;
+            color: #fff;
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+                background: none;
+            }
+        }
+    }
+    .footer-right {
+        .make-xs-column(12);
+        .make-md-column(7);
+        float: right!important;
+        margin-bottom: 30px;
+        li {
+            display: block;
+            margin: 0 0 5px 0;
+        }
+        h4 {
+            margin: 0 0 15px 0;
+            padding: 0 0 15px 0;
+            color: #ddd;
+        }
+        .fa {
+            margin: 0 3px;
+            color: #fff;
+        }
+    }
+}
+
+#bottom {
+    text-align: center;
+    padding: 100px 0;
+
+    @media (max-width: 2000px) {
+        padding: 60px 0;
+    }
+    background: #fff;
+    @media (max-width: @screen-sm-max) {
+        padding:0;
+    }
+    .region-content-bottom {
+        .container;
+    }
+    p {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.4;
+        color: #737373;
+        margin: 0 0 30px 0;
+        display: block;
+
+          @media (max-width: @screen-sm-max) {
+       font-size:1em; br{display:none}
+    }
+    }
+    a {
+        display: block;
+        vertical-align: middle
+    }
+    img {
+        height: 80px;
+        width: auto;
+        @media (max-width: @screen-sm-max) {
+            margin:0 auto 30px auto;
+        }
+        &.dco-logo {
+            height: 100px
+        }
+    }
+    .block {
+        vertical-align: middle;
+        padding: 0 30px;
+        display: inline-block;
+        &:first-child {
+            display: block;
+        }
+    }
+}

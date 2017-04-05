@@ -1,0 +1,22 @@
+
+#page-manager-edit .panel-1col {
+/*  overflow: hidden;  */
+}
+
+#page-manager-edit .panel-2col .panel-col-first .inside {
+  margin: 0;
+}
+
+
+#page-manager-edit .panel-1col .panel-col {
+  width: 100%;
+}
+
+#panels-edit-display .panel-pane,
+#panels-edit-display .helperclass {
+  margin: .5em;
+}
+
+#page-manager-edit .panel-2col .panel-separator {
+  margin: 0 0 1em 0;
+}

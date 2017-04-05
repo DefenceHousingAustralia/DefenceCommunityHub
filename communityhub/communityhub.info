@@ -1,0 +1,49 @@
+name = CommunityHub
+description = Awesome custom theme for the Defence Community Hub website.
+core = 7.x
+base theme = bootstrap
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation]     = 'Navigation'
+regions[mobile_header]  = 'Mobile header'
+regions[feature_header] = 'Feature Page Header'
+regions[page_title]     = 'Page Title'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[highlighted]    = 'Highlighted'
+regions[content_bottom] = 'Content bottom'
+regions[site_bottom]  	= 'Site bottom'
+regions[footer]         = 'Footer'
+regions[page_top]       = 'Page top'
+regions[page_bottom]    = 'Page bottom'
+
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Panels
+;;;;;;;;;;;;;;;;;;;;;
+
+plugins[panels][layouts] = layouts
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = dist/css/awesomestyles.min.css
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;
+
+scripts[] = 'dist/js/jquery.plugins.min.js'
+scripts[] = 'dist/js/scripts.min.js'
+
+; Disable the CDN provider so compiled source files can be used.
+settings[bootstrap_cdn] = ''

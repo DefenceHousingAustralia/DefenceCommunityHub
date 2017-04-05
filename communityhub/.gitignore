@@ -1,0 +1,4 @@
+# Ignore Gulp Node Modules #
+###################
+communityhub/node_modules
+node_modules
