@@ -32,8 +32,8 @@
     @import "less/input-groups.less";
     @import "less/navs.less";
     @import "less/navbar.less";
-   // @import "less/breadcrumbs.less";
-  // @import "less/pagination.less";
+    // @import "less/breadcrumbs.less";
+    // @import "less/pagination.less";
     //  @import "less/pager.less";
     // @import "less/labels.less";
     // @import "less/badges.less";
@@ -69,11 +69,36 @@
     // Extra big for Twitter Bootstrap
     @media (max-width: 1400px) {
         .container {
-        width:100%!important
+            width: 100%!important
         }
     }
     
-
+    .skip-to-content {
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: pink!important;
+        z-index: 1000;
+        text-align: center;
+        font-size: 21px;   
+        &:focus {
+            background-color: #fff;
+            outline: 2px solid #000;
+            outline-offset: .5rem;
+            position: absolute;
+            width: auto;
+            height: auto;
+            margin: 0;
+            overflow: visible;
+            clip: auto;
+            padding: 21px;
+        }
+    }
+    
+    .element-focusable {
+        z-index: 1000;
+    }
+    
     .hidden {
         opacity: 0;
     }
@@ -1123,7 +1148,7 @@
     }
     
     .link-boxes {
-        margin-top:30px;
+        margin-top: 30px;
         .make-row;
         .clearfix();
         div {
@@ -1136,8 +1161,9 @@
                 text-align: center;
                 text-decoration: none!important;
                 font-weight: bold;
-               // box-shadow: 0 8px 40px -6px rgba(105, 104, 178, .18);
+                // box-shadow: 0 8px 40px -6px rgba(105, 104, 178, .18);
                 border-radius: 2px;
+                min-height: 200px;
                 &:before {
                     font-family: "fontello";
                     font-style: normal;
@@ -1154,7 +1180,7 @@
                     content: '\e800';
                     display: block;
                     font-size: 30px;
-                   // color: #fff;
+                    // color: #fff;
                     background: #558dae;
                     margin-bottom: 15px;
                     width: 60px;
@@ -1163,14 +1189,14 @@
                     line-height: 60px;
                     border-radius: 100%;
                     margin-bottom: 15px;
-                    color:#a8cce4
+                    color: #a8cce4
                 }
                 &:hover,
                 &:focus {
                     background: #7eb0d1;
                     color: #fff;
                     &:before {
-                        color:#fff;
+                        color: #fff;
                     }
                 }
             }

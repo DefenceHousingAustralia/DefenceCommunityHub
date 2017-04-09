@@ -80,12 +80,12 @@
 <body<?php print $body_attributes; ?>>
 
   <div id="skip-link">
-    <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
+    <a href="#main-content" tab-index="1+" class="skip-to-content element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
   
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58c7d403f67472c0"></script>
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58c7d403f67472c0"></script>
 </body>
 </html>

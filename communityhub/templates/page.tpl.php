@@ -25,9 +25,9 @@
       <?php endif; ?>
     </div>
 
-    <div class="pull-right social-icons">
-<div class="addthis_inline_share_toolbox"></div>
-  </div>
+  <div class="pull-right social-icons">
+      <div class="addthis_inline_share_toolbox"></div>
+    </div>
 
     <div id="primary-nav" role="navigation">
         <?php if (!empty($page['navigation'])): ?>
