@@ -123,29 +123,9 @@
     <div class="container">
 
      <div class="footer-right">
-      <div class="col-xs-12 col-sm-4">
-      <h4>DHA</h4>
-      <ul>
-      <li class="leaf"><a href="https://www.facebook.com/pages/Defence-Housing-Australia" title=""><i class="fa fa-facebook-square"></i> DHA on Facebook</a></li>
-      <li class="last leaf"><a href="https://twitter.com/defencehousing" title=""><i class="fa fa-twitter-square"></i> DHA on Twitter</a></li>
-      </ul>
-      </div>
-
-      <div class="col-xs-12 col-sm-4">
-      <h4>DCO</h4>
-      <ul>
-      <li><a href="https://www.facebook.com/DefenceCommunityOrganisation/" title=""><i class="fa fa-facebook-square"></i> DCO on Facebook</a></li>
-      <li class="leaf"><a href="https://twitter.com/DCO_AusDefence" title=""><i class="fa fa-twitter-square"></i> DCO on Twitter</a></li>
-
-      </ul>
-      </div>
-
-      <div class="col-xs-12 col-sm-4">
-      <h4>DFA</h4>
-      <ul>
-      <li class="leaf"><a href="https://www.facebook.com/DefenceFamiliesofAustralia/" title=""><i class="fa fa-facebook-square"></i> DFA on Facebook</a></li>
-      </ul>
-      </div>
+     
+      <?php print render($page['social']); ?>
+      
     </div>
 
 
