@@ -315,6 +315,20 @@ $('a, img').filter(function(){
     }
   });
   $.simpleWeather({
+  location: 'Puckapunyal, VIC',
+    unit: 'c',
+    success: function(weather) {
+      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
+      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
+      html += '<li class="currently">'+weather.currently+'</li>';
+  
+      $("#36").html(html);
+    },
+    error: function(error) {
+      $("#36").html('<p>'+error+'</p>');
+    }
+  });
+  $.simpleWeather({
   location: 'Wodonga, VIC',
     unit: 'c',
     success: function(weather) {
