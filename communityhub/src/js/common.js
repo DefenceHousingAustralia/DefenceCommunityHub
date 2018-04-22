@@ -385,7 +385,23 @@ $('a, img').filter(function(){
       $("#27").html(html);
     },
     error: function(error) {
-      $("27").html('<p>'+error+'</p>');
+      $("#27").html('<p>'+error+'</p>');
+    }
+  });
+
+
+ $.simpleWeather({
+  location: 'Pilbara, WA',
+    unit: 'c',
+    success: function(weather) {
+      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
+      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
+      html += '<li class="currently">'+weather.currently+'</li>';
+  
+      $("#41").html(html);
+    },
+    error: function(error) {
+      $("#41").html('<p>'+error+'</p>');
     }
   });
 
