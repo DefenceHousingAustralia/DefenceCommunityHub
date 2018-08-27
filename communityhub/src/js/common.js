@@ -64,7 +64,7 @@ jQuery(document).ready(function($) {
 
 
 
-    var canberra = jQuery("#4").flatWeatherPlugin({
+    var canberra = $("#4").flatWeatherPlugin({
 
         location: "Canberra, ACT", //city and region *required 
         country: "AUSTRALIA", //country *required 
