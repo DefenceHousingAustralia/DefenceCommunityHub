@@ -9308,6 +9308,7 @@ img.alignright {
   padding: 0;
   margin: 0;
   color: inherit;
+  font-size: 1em!important;
 }
 #flatWeatherLoading.loading {
   font-size: 90px;
@@ -9344,7 +9345,7 @@ img.alignright {
 }
 .flatWeatherPlugin .wiToday > .wiIconGroup {
   float: right;
-  width: 50%;
+  width: 100%;
   text-align: center;
 }
 .flatWeatherPlugin .wiToday > .wiIconGroup p {
@@ -9382,10 +9383,10 @@ img.alignright {
   clear: both;
 }
 .flatWeatherPlugin div.wiToday > p.wiTemperature {
-  font-size: 400%;
+  font-size: 200%;
   line-height: 1.45em;
   float: left;
-  width: 50%;
+  width: 100%;
   text-align: center;
   color: inherit;
 }
