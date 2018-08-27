@@ -44,7 +44,9 @@ stylesheets[all][] = dist/css/awesomestyles.min.css
 ;;;;;;;;;;;;;;;;;;;;;
 
 scripts[] = 'dist/js/jquery.plugins.min.js'
+scripts[] = 'jquery.flatWeatherPlugin.min.js'
 scripts[] = 'dist/js/scripts.min.js'
+
 
 ; Disable the CDN provider so compiled source files can be used.
 settings[bootstrap_cdn] = ''

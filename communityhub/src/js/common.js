@@ -64,7 +64,7 @@ $('a, img').filter(function(){
 
 
 
-      var canberra = $("#4").flatWeatherPlugin({
+      var canberra = jQuery("#4").flatWeatherPlugin({
 
               location: "Canberra, ACT", //city and region *required 
               country: "AUSTRALIA",         //country *required 
@@ -197,7 +197,7 @@ $('a, img').filter(function(){
 
 
 
- var Darwin = $("#12").flatWeatherPlugin({
+ var Cairns = $("#12").flatWeatherPlugin({
 
               location: "Cairns, QLD", 
               country: "AUSTRALIA", 
@@ -217,7 +217,7 @@ $('a, img').filter(function(){
 
 
 
- var Darwin = $("#13").flatWeatherPlugin({
+ var Ipswitch = $("#13").flatWeatherPlugin({
 
               location: "Ipswitch, QLD", 
               country: "AUSTRALIA", 
@@ -279,7 +279,7 @@ $('a, img').filter(function(){
 
 
 
- var Hobart = $("#19").flatWeatherPlugin({
+ var Melbourne = $("#19").flatWeatherPlugin({
 
               location: "Melbourne, VIC", 
               country: "AUSTRALIA", 
