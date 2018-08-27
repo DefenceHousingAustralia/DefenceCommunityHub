@@ -87,7 +87,7 @@ $('a, img').filter(function(){
 
               location: "Albury, NSW", //city and region *required 
               country: "AUSTRALIA",         //country *required 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -106,7 +106,7 @@ $('a, img').filter(function(){
 
               location: "Hunter, NSW", //city and region *required 
               country: "AUSTRALIA",         //country *required 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -124,7 +124,7 @@ $('a, img').filter(function(){
 
               location: "Sydney, NSW", //city and region *required 
               country: "AUSTRALIA",         //country *required 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -142,7 +142,7 @@ $('a, img').filter(function(){
 
               location: "Nowra, NSW", //city and region *required 
               country: "AUSTRALIA",         //country *required 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -161,7 +161,7 @@ $('a, img').filter(function(){
 
               location: "Wagga Wagga, NSW", //city and region *required 
               country: "AUSTRALIA",         //country *required 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -181,7 +181,7 @@ $('a, img').filter(function(){
 
               location: "Brisbane, QLD", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -201,7 +201,7 @@ $('a, img').filter(function(){
 
               location: "Cairns, QLD", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -221,7 +221,7 @@ $('a, img').filter(function(){
 
               location: "Ipswitch, QLD", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -240,7 +240,7 @@ $('a, img').filter(function(){
 
               location: "Toowoomba, QLD", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -259,7 +259,7 @@ $('a, img').filter(function(){
 
               location: "Townsville, QLD", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -283,7 +283,7 @@ $('a, img').filter(function(){
 
               location: "Melbourne, VIC", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -304,7 +304,7 @@ $('a, img').filter(function(){
 
               location: "Wodonga, VIC", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -323,7 +323,7 @@ $('a, img').filter(function(){
 
               location: "Sale, VIC", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -344,7 +344,7 @@ $('a, img').filter(function(){
 
               location: "Alice Springs, NT", //city and region *required 
               country: "AUSTRALIA",         //country *required 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -364,7 +364,7 @@ $('a, img').filter(function(){
 
               location: "Darwin, NT", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -383,7 +383,7 @@ $('a, img').filter(function(){
 
               location: "Katherine, NT", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -407,7 +407,7 @@ $('a, img').filter(function(){
 
               location: "Perth, WA", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -426,7 +426,7 @@ $('a, img').filter(function(){
 
               location: "Mornington Peninsula, VIC", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -447,7 +447,7 @@ $('a, img').filter(function(){
 
               location: "Hobart, TAS", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -466,7 +466,7 @@ $('a, img').filter(function(){
 
               location: "Adelaide, SA", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -485,7 +485,7 @@ $('a, img').filter(function(){
 
               location: "Puckapunyal, VIC", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
@@ -502,7 +502,7 @@ $('a, img').filter(function(){
 
               location: "Pilbara, WA", 
               country: "AUSTRALIA", 
-              api: "openweathermap",
+              api: "yahoo",
               apikey: "9a4280ff8ee4aac1418756ffd3aac2fe", 
               view : "simple", 
               lang: "en", 
