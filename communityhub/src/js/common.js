@@ -139,7 +139,6 @@ jQuery(document).ready(function($) {
         location: "Nowra, NSW", //city and region *required 
         country: "AUSTRALIA", //country *required 
         api: "yahoo",
-
         view: "simple",
         lang: "en",
         timeformat: "12",
@@ -392,7 +391,6 @@ jQuery(document).ready(function($) {
         location: "Perth, WA",
         country: "AUSTRALIA",
         api: "yahoo",
-
         view: "simple",
         lang: "en",
         timeformat: "12",
@@ -411,7 +409,6 @@ jQuery(document).ready(function($) {
         location: "Mornington Peninsula, VIC",
         country: "AUSTRALIA",
         api: "yahoo",
-
         view: "simple",
         lang: "en",
         timeformat: "12",
@@ -432,7 +429,6 @@ jQuery(document).ready(function($) {
         location: "Hobart, TAS",
         country: "AUSTRALIA",
         api: "yahoo",
-
         view: "simple",
         lang: "en",
         timeformat: "12",
