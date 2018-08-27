@@ -61,349 +61,461 @@ $('a, img').filter(function(){
         }, 100);
     });
 
-  $.simpleWeather({
-    location: 'Canberra, ACT',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#4").html(html);
-    },
-    error: function(error) {
-      $("#4").html('<p>'+error+'</p>');
-    }
-  });
 
 
-    $.simpleWeather({
-    location: 'Albury, NSW',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#5").html(html);
-    },
-    error: function(error) {
-      $("#5").html('<p>'+error+'</p>');
-    }
-  });
 
-    $.simpleWeather({
-    location: 'Hunter, NSW',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#6").html(html);
-    },
-    error: function(error) {
-      $("#6").html('<p>'+error+'</p>');
-    }
-  });
+      var canberra = $("#4").flatWeatherPlugin({
 
-  $.simpleWeather({
-    location: 'Sydney, NSW',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#7").html(html);
-    },
-    error: function(error) {
-      $("#7").html('<p>'+error+'</p>');
-    }
-  });
+              location: "Canberra, ACT", //city and region *required 
+              country: "AUSTRALIA",         //country *required 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
 
- $.simpleWeather({
- location: 'Nowra, NSW',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#8").html(html);
-    },
-    error: function(error) {
-      $("#8").html('<p>'+error+'</p>');
-    }
-  });
+      });
 
- $.simpleWeather({
- location: 'Wagga Wagga, NSW',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#9").html(html);
-    },
-    error: function(error) {
-      $("#9").html('<p>'+error+'</p>');
-    }
-  });
+ 
 
- $.simpleWeather({
- location: 'Alice Springs, NT',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#23").html(html);
-    },
-    error: function(error) {
-      $("#23").html('<p>'+error+'</p>');
-    }
-  });
+   var albury = $("#5").flatWeatherPlugin({
 
- $.simpleWeather({
- location: 'Darwin, NT',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#24").html(html);
-    },
-    error: function(error) {
-      $("#24").html('<p>'+error+'</p>');
-    }
-  });
+              location: "Albury, NSW", //city and region *required 
+              country: "AUSTRALIA",         //country *required 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
 
- $.simpleWeather({
- location: 'Katherine, NT',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#25").html(html);
-    },
-    error: function(error) {
-      $("#25").html('<p>'+error+'</p>');
-    }
-  });
-
- $.simpleWeather({
- location: 'Cairns, QLD',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#12").html(html);
-    },
-    error: function(error) {
-      $("#12").html('<p>'+error+'</p>');
-    }
-  });
- $.simpleWeather({
- location: 'Ipswitch, QLD',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#13").html(html);
-    },
-    error: function(error) {
-      $("#13").html('<p>'+error+'</p>');
-    }
-  });
-  $.simpleWeather({
-  location: 'Toowoomba, QLD',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#14").html(html);
-    },
-    error: function(error) {
-      $("#14").html('<p>'+error+'</p>');
-    }
-  });
-
- $.simpleWeather({
-  location: 'Townsville, QLD',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#15").html(html);
-    },
-    error: function(error) {
-      $("#15").html('<p>'+error+'</p>');
-    }
-  });
-
- $.simpleWeather({
-  location: 'Brisbane, QLD',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#11").html(html);
-    },
-    error: function(error) {
-      $("#11").html('<p>'+error+'</p>');
-    }
-  });
-
- $.simpleWeather({
-  location: 'Adelaide, SA',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#30").html(html);
-    },
-    error: function(error) {
-      $("#30").html('<p>'+error+'</p>');
-    }
-  });
-
- $.simpleWeather({
-  location: 'Hobart, TAS',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#29").html(html);
-    },
-    error: function(error) {
-      $("#29").html('<p>'+error+'</p>');
-    }
-  });
-
- $.simpleWeather({
-  location: 'Melbourne, VIC',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#19").html(html);
-    },
-    error: function(error) {
-      $("#19").html('<p>'+error+'</p>');
-    }
-  });
-  $.simpleWeather({
-  location: 'Puckapunyal, VIC',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#36").html(html);
-    },
-    error: function(error) {
-      $("#36").html('<p>'+error+'</p>');
-    }
-  });
-  $.simpleWeather({
-  location: 'Wodonga, VIC',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#20").html(html);
-    },
-    error: function(error) {
-      $("#20").html('<p>'+error+'</p>');
-    }
-  });
-
-  $.simpleWeather({
-  location: 'Sale, VIC',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#21").html(html);
-    },
-    error: function(error) {
-      $("#21").html('<p>'+error+'</p>');
-    }
-  });
-
-  $.simpleWeather({
-  location: 'Mornington Peninsula, VIC',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#28").html(html);
-    },
-    error: function(error) {
-      $("#28").html('<p>'+error+'</p>');
-    }
- });
+      });
 
 
- $.simpleWeather({
-  location: 'Perth, WA',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#27").html(html);
-    },
-    error: function(error) {
-      $("#27").html('<p>'+error+'</p>');
-    }
-  });
+
+   var hunter = $("#6").flatWeatherPlugin({
+
+              location: "Hunter, NSW", //city and region *required 
+              country: "AUSTRALIA",         //country *required 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
 
 
- $.simpleWeather({
-  location: 'Pilbara, WA',
-    unit: 'c',
-    success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-  
-      $("#41").html(html);
-    },
-    error: function(error) {
-      $("#41").html('<p>'+error+'</p>');
-    }
-  });
+   var sydney = $("#7").flatWeatherPlugin({
+
+              location: "Sydney, NSW", //city and region *required 
+              country: "AUSTRALIA",         //country *required 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+   var nowra = $("#8").flatWeatherPlugin({
+
+              location: "Nowra, NSW", //city and region *required 
+              country: "AUSTRALIA",         //country *required 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+ var Wagga = $("#9").flatWeatherPlugin({
+
+              location: "Wagga Wagga, NSW", //city and region *required 
+              country: "AUSTRALIA",         //country *required 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+
+ var Brisbane = $("#11").flatWeatherPlugin({
+
+              location: "Brisbane, QLD", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+
+ var Darwin = $("#12").flatWeatherPlugin({
+
+              location: "Cairns, QLD", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+
+ var Darwin = $("#13").flatWeatherPlugin({
+
+              location: "Ipswitch, QLD", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+ var Toowoomba = $("#14").flatWeatherPlugin({
+
+              location: "Toowoomba, QLD", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+ var Townsville = $("#15").flatWeatherPlugin({
+
+              location: "Townsville, QLD", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+
+
+
+
+
+ var Hobart = $("#19").flatWeatherPlugin({
+
+              location: "Melbourne, VIC", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+
+
+ var Wodonga = $("#20").flatWeatherPlugin({
+
+              location: "Wodonga, VIC", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+ var Sale = $("#21").flatWeatherPlugin({
+
+              location: "Sale, VIC", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+
+
+ var Alice = $("#23").flatWeatherPlugin({
+
+              location: "Alice Springs, NT", //city and region *required 
+              country: "AUSTRALIA",         //country *required 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+
+ var Darwin = $("#24").flatWeatherPlugin({
+
+              location: "Darwin, NT", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+ var Katherine = $("#25").flatWeatherPlugin({
+
+              location: "Katherine, NT", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+
+
+
+
+
+ var Perth = $("#27").flatWeatherPlugin({
+
+              location: "Perth, WA", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+ var Mornington = $("#28").flatWeatherPlugin({
+
+              location: "Mornington Peninsula, VIC", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+
+
+ var Hobart = $("#29").flatWeatherPlugin({
+
+              location: "Hobart, TAS", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+ var Adelaide = $("#30").flatWeatherPlugin({
+
+              location: "Adelaide, SA", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
+
+ var Puckapunyal = $("#36").flatWeatherPlugin({
+
+              location: "Puckapunyal, VIC", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+ var Pilbara = $("#41").flatWeatherPlugin({
+
+              location: "Pilbara, WA", 
+              country: "AUSTRALIA", 
+              api: "openweathermap",
+              apikey: "9a4280ff8ee4aac1418756ffd3aac2fe9a4280ff8ee4aac1418756ffd3aac2fe", 
+              view : "simple", 
+              lang: "en", 
+              timeformat: "12", 
+              displayCityNameOnly : false, 
+              forecast: 0,
+              render: true,
+              loadingAnimation: true, 
+              units : "metric"
+
+      });
+
+
 
 
 });
