@@ -68,7 +68,7 @@ jQuery(document).ready(function($) {
 
         location: "Canberra, ACT", //city and region *required 
         country: "AUSTRALIA", //country *required 
-        api: "openweathermap",
+        api: "yahoo",
         view: "simple",
         lang: "en",
         timeformat: "12",
