@@ -7828,7 +7828,8 @@ button.close {
   padding: 30px 15px;
   text-transform: uppercase;
   border-radius: 3px;
-  background: #94a1ba;
+  background: #fff;
+  color:#47546e!important;
 }
 .bootstrap-twocol .weather-wrapper .weather p {
   margin: 0 0 8px;
