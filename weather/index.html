@@ -1,0 +1,1832 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>EasyWeather - the weather engine</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="koalyptus">
+	<meta name="copyright" content="koalyptus">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2013-09-19T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#0000FF;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -ms-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -webkit-gradient(linear, 0 0, 0 0088CC%, from(#DDDDDD), to(#0044CC));
+			  background-image: -webkit-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -o-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: linear-gradient(top, #0088CC, #0044CC);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088CC', endColorstr='#0044CC', GradientType=0);
+			  border-color: #0044CC #0044CC #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #0088CC #0088CC #bfbfbf;
+		  background-color: #0044CC;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ul{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ul a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ul a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ul a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-easyweather">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#main_features" title="Main features">Main features</a></li>
+			<li><a href="#quick_start" title="Quick Start">Quick Start</a></li>
+			<li><a href="#samples" title="Samples">Samples</a></li>
+			<li><a href="#providers" title="Providers">Providers</a></li>
+			<li><a href="#how_it_works" title="How it works">How it works</a></li>
+			<li><a href="#options" title="Options">Options</a></li>
+			<li><a href="#events" title="Events">Events</a></li>
+			<li><a href="#properties" title="Properties">Properties</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright koalyptus 2013<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>EasyWeather</h1>
+	<h2>the weather engine</h2>
+	<div id="documenter_buttons">
+		<a href="starter.html" class="btn btn-primary btn-large">Starter</a> <a href="samples.html" class="btn btn-primary btn-large">Samples</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 09/19/2013</li>
+	<li>latest update: 18/02/2018</li>
+	<li>by: koalyptus</li>
+	<li><a href="http://mguglielmi.free.fr/scripts/easyweather">mguglielmi.free.fr/scripts/easyweather</a></li>
+	
+	</ul>
+	<p>EasyWeather is a lightweight and versatile jQuery plugin displaying weather information for any location.  
+Its compact size and numerous options make it perfectly suitable for providing local weather information in portals, websites, blogs and apps.</p>
+	</section>
+	
+	<section id="main_features">
+	<div class="page-header"><h3>Main features</h3><hr class="notop"></div>
+<style type="text/css">
+pre{background-color:#F7F7F9;border:1px solid #E1E1E8;color:navy;display:block;font-size:12px;line-height:18px;margin:5px 0;padding:9px;white-space:pre-wrap;border-radius:4px}code{background-color:#F7F7F9;border:1px solid #E1E1E8;color:#990073;padding:1px 4px;border-radius:3px}hr{border-bottom:1px dotted #ccc;border-top:0;border-left:0;border-right:0}.title h1{border-bottom:0;margin:0;font-size:260%}.title span{font-size:90%;color:#666;font-style:italic}.toc{float:right;width:170px;height:auto;margin:15px auto auto 30px;background-color:#DFF0D8;border:1px solid #8DCA73;text-decoration:none;border-radius:5px}.toc a{color:#333}.toc ul{list-style:none outside;margin:0;padding:0}.toc ul li{margin:0;padding:0 5px 0 padding}.toc ul li ul li{margin:0;padding:0 0 0 15px;font-size:90%}.toc ul li ul li ul li{margin:0;padding:0 0 0 30px;font-size:90%}.toc li a{display:block;padding:5px}.sample{font-size:90%;background-color:#fff;border:1px dotted #999;padding:8px;margin:5px 0;border-radius:5px}.sample p{margin:0 auto}.before{width:48%;float:left}.after{width:48%;float:right}.clearBoth{clear:both}.floatLeft{float:left}.floatRight{float:right}table.tbl-doc{width:100%;border:1px solid #f4f4f4;padding:0}table.tbl-doc th{background-color:#D9EDF7;border-bottom:1px solid #f4f4f4}table.tbl-doc td{border-bottom:1px solid #CCC;vertical-align:top}table.pvd-list td{text-align:center}a.top{font-size:100%;font-weight:400;width:75px}a.purchase{background-color:#BB3415;background-image:linear-gradient(#D0441B,#BB3415);border:1px solid #C93D1E;border-radius:3px;color:#FFF;cursor:pointer;display:inline-block;font-size:12px;margin:0 10px 0 0;padding:5px 10px 6px;text-align:left;text-shadow:0 0 0 transparent,1px 1px 0 rgba(0,0,0,.1)}</style>
+<ul>
+	<li>
+		It supports the following weather providers:
+		<ul>
+			<li>
+				<a href="http://weather.yahoo.com" target="_blank" title="Yahoo! Weather content provider">Yahoo! Weather</a></li>
+			<li>
+				<a href="http://www.worldweatheronline.com/" target="_blank" title="Free local weather content provider">World Weather Online</a></li>
+			<li>
+				<a href="http://openweathermap.org" target="_blank" title="Open Weather Map - free weather data and forecast API">Open Weather Map</a></li>
+			<li>
+				<a href="http://www.wunderground.com" target="_blank" title="Weather Forecast &amp; Reports - Long Range &amp; Local | Wunderground | Weather Underground">Wunderground.com</a></li>
+			<li>
+				<a href="http://www.hamweather.com" target="_blank" title="AERIS, a streamlined and flexible weather API">HAMweather</a></li>
+			<li>
+				<a href="http://forecast.io" target="_blank" title="The easiest, most advanced, weather API on the web">Forecast.io</a></li>
+		</ul>
+	</li>
+	<li>
+		And the following Geolocation services:
+		<ul>
+			<li>
+				<a href="http://www.geoplugin.com" target="_blank" title="Plugin to geo-targeting and unleash your site's potential">geoPlugin</a></li>
+			<li>
+				<a href="http://freegeoip.net" target="_blank" title="A public web service for searching geolocation of IP addresses and host names">Freegeoip.net</a></li>
+			<li>
+				<a href="http://www.telize.com" target="_blank" title="Get IP address location in JSON format">Telize GeoIP</a></li>
+			<li>
+				<a href="https://ipinfo.io" target="_blank" title="IP Address API and Data Solutions">ipinfo.io</a></li>
+			<li>
+				or alternatively native W3C geolocation</li>
+		</ul>
+	</li>
+	<li>
+		Up to 10 days weather forecast depending on service</li>
+	<li>
+		Custom location search bar</li>
+	<li>
+		Units selection: Celsius/Fahrenheit and Kmph/Miles</li>
+	<li>
+		Caching mechanism based on:
+		<ul>
+			<li>
+				HTML 5 local storage or</li>
+			<li>
+				Cookies</li>
+		</ul>
+	</li>
+	<li>
+		Pure client-side solution, no particular server-side technology required, no proxy page</li>
+	<li>
+		10 predefined themes</li>
+	<li>
+		Templates and CSS styles fully customisable</li>
+	<li>
+		Callbacks, custom events and delegates for most actions</li>
+	<li>
+		Easy to install</li>
+	<li>
+		Extensive documentation</li>
+</ul>
+</section>
+<section id="quick_start">
+	<div class="page-header"><h3>Quick Start</h3><hr class="notop"></div>
+<h4 id="quick_start_step_1">Step 1</h4>
+<p>
+	To install <strong>EasyWeather</strong> you need to unzip the download package and then include the following scripts and stylesheet files in the <code>head</code> section of your page:</p>
+<pre>
+&lt;head&gt;
+
+&lt;!-- jQuery dependency --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;EasyWeather/scripts/jquery-1.7.2.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EasyWeather files --&gt;
+&lt;link href=&quot;EasyWeather/css/easy-weather.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;EasyWeather/scripts/easy-weather-keys.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;EasyWeather/scripts/easy-weather.js&quot;&gt;&lt;/script&gt;
+
+&lt;/head&gt;</pre>
+<h4 id="quick_start_step_2">Step 2</h4>
+<p>
+	In the <code>body</code> section of your page place a <code>div</code> element that will contain the widget and append the javascript instruction that will generate the weather widget:</p>
+<pre>
+&lt;div class=&quot;ew&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+	$(&#39;.ew&#39;).EasyWeather();
+&lt;/script&gt;
+</pre>
+<p>
+	Check the <a href="starter.html">starter</a> page out.<br>
+	You are done! :)</p>
+<h4 id="quick_start_step_3_optional">Step 3 - optional</h4>
+<p>
+	If you want to take fully advantage of EasyWeather&#39;s engine capabilities, you may decide to use more than one weather service. To do so, you will need to specify a personal API key for each service you intend to use.</p>
+<h5>
+	1. Choose and sign-up to weather services</h5>
+<p>
+	Choose one (or more) of the following weather services and follow the sign-up process on the weather service website to obtain a personal API key:</p>
+<ul>
+	<li>
+		<a href="http://weather.yahoo.com" target="_blank" title="Yahoo! Weather content provider">Yahoo! Weather</a> - No account required</li>
+	<li>
+		<a href="http://www.worldweatheronline.com/" target="_blank" title="Free local weather content provider">World Weather Online</a> - <small><a href="http://developer.worldweatheronline.com/member/register" target="_blank" title="Weather provider sign-up">Sign-up here</a></small></li>
+	<li>
+		<a href="http://openweathermap.org" target="_blank" title="Open Weather Map - free weather data and forecast API">Open Weather Map</a> - <small><a href="http://openweathermap.org/login" target="_blank" title="Weather provider sign-up">Sign-up here</a></small></li>
+	<li>
+		<a href="http://www.wunderground.com" target="_blank" title="Weather Forecast &amp; Reports - Long Range &amp; Local | Wunderground | Weather Underground">Wunderground.com</a> - <small><a href="https://www.wunderground.com/members/signup.asp" target="_blank" title="Weather provider sign-up">Sign-up here</a></small></li>
+	<li>
+		<a href="http://www.hamweather.com" target="_blank" title="AERIS, a streamlined and flexible weather API">HAMweather</a> - <small><a href="http://www.hamweather.com/account/signup/" target="_blank" title="Weather provider sign-up">Sign-up here</a></small></li>
+	<li>
+		<a href="http://forecast.io" target="_blank" title="The easiest, most advanced, weather API on the web">Forecast.io</a> - <small><a href="http://developer.forecast.io/register" target="_blank" title="Weather provider sign-up">Sign-up here</a></small></li>
+</ul>
+<h5>
+	2. Place weather services API keys</h5>
+<p>
+	Once you obtained one or more API keys, locate the <code>easy-weather-keys.js</code> file and replace the text &#39;YOUR KEY GOES HERE&#39; with the corresponding key:</p>
+<pre>
+...
+var EasyWeather = { 
+	Keys: {
+		wwo: { key: function() { return &#39;123ABC&#39;; } },
+		owm: { key: function() { return &#39;456DEF&#39;; } },
+		wug: { key: function() { return &#39;YOUR KEY GOES HERE&#39;; } },
+		ham: { key: function() { return &#39;YOUR KEY GOES HERE&#39;; }, secret_key: function() { return &#39;YOUR KEY GOES HERE&#39;; } },
+		ipinf: { key: function() { return &#39;YOUR KEY GOES HERE&#39;; } }
+	}
+};
+...</pre>
+<p>
+	then remove the unused keys and make sure last item does not end with a comma <code>,</code>:</p>
+<pre>
+...
+var EasyWeather = { 
+	Keys: {
+		wwo: { key: function() { return &#39;123ABC&#39;; } },
+		owm: { key: function() { return &#39;456DEF&#39;; } },
+		ipinf: { key: function() { return &#39;789GHI&#39;; } }
+};
+...</pre>
+<p>
+	Now the widget will be able to retrieve weather information from many weather services.</p>
+</section>
+<section id="samples">
+	<div class="page-header"><h3>Samples</h3><hr class="notop"></div>
+<p>
+	The <a href="samples.html">samples</a> page features a complete collection of widgets showing how to configure <strong>EasyWeather</strong>.</p>
+</section>
+<section id="providers">
+	<div class="page-header"><h3>Providers</h3><hr class="notop"></div>
+<p>
+	This is the list of supported weather providers:</p>
+<table class="tbl-doc pvd-list">
+	<thead>
+		<tr>
+			<th>
+				Name</th>
+			<th>
+				Code</th>
+			<th>
+				Requires account</th>
+			<th>
+				Free plan</th>
+			<th>
+				Throttled by API</th>
+			<th>
+				Nb of forecast days</th>
+			<th>
+				Language support</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>
+				Yahoo! Weather</th>
+			<td>
+				yhw</td>
+			<td>
+				no</td>
+			<td>
+				yes</td>
+			<td>
+				no</td>
+			<td>
+				4</td>
+			<td>
+				no</td>
+		</tr>
+		<tr>
+			<th>
+				<a href="http://developer.worldweatheronline.com/member/register" target="_blank" title="Weather provider sign-up">World Weather Online</a></th>
+			<td>
+				wwo</td>
+			<td>
+				yes</td>
+			<td>
+				yes</td>
+			<td>
+				yes</td>
+			<td>
+				5</td>
+			<td>
+				no</td>
+		</tr>
+		<tr>
+			<th>
+				<a href="http://openweathermap.org/login" target="_blank" title="Weather provider sign-up">Open Weather Map</a></th>
+			<td>
+				owm</td>
+			<td>
+				yes</td>
+			<td>
+				yes</td>
+			<td>
+				yes</td>
+			<td>
+				7</td>
+			<td>
+				yes</td>
+		</tr>
+		<tr>
+			<th>
+				<a href="https://www.wunderground.com/members/signup.asp" target="_blank" title="Weather provider sign-up">Wunderground.com</a></th>
+			<td>
+				wug</td>
+			<td>
+				yes</td>
+			<td>
+				yes</td>
+			<td>
+				yes</td>
+			<td>
+				10</td>
+			<td>
+				no</td>
+		</tr>
+		<tr>
+			<th>
+				<a href="http://www.hamweather.com/account/signup/" target="_blank" title="Weather provider sign-up">HAMweather</a></th>
+			<td>
+				ham</td>
+			<td>
+				yes</td>
+			<td>
+				yes</td>
+			<td>
+				yes</td>
+			<td>
+				10</td>
+			<td>
+				no</td>
+		</tr>
+		<tr>
+			<th>
+				<a href="http://developer.forecast.io/register" target="_blank" title="Weather provider sign-up">Forecast.io</a></th>
+			<td>
+				fio</td>
+			<td>
+				yes</td>
+			<td>
+				yes (free first 1000 <br>API calls/day)</td>
+			<td>
+				yes</td>
+			<td>
+				7</td>
+			<td>
+				no</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	And below the list of geolocation providers:</p>
+<table class="tbl-doc pvd-list">
+	<thead>
+		<tr>
+			<th>
+				Name</th>
+			<th>
+				Code</th>
+			<th>
+				Requires account</th>
+			<th>
+				Free plan</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>
+				geoPlugin</th>
+			<td>
+				geopl</td>
+			<td>
+				No</td>
+			<td>
+				Yes</td>
+		</tr>
+		<tr>
+			<th>
+				freegeoip.net</th>
+			<td>
+				fgip</td>
+			<td>
+				No</td>
+			<td>
+				Yes</td>
+		</tr>
+		<tr>
+			<th>
+				Telize GeoIP</th>
+			<td>
+				tlz</td>
+			<td>
+				No</td>
+			<td>
+				Yes</td>
+		</tr>
+		<tr>
+			<th>
+				ipinfo.io</th>
+			<td>
+				ipinf</td>
+			<td>
+				Yes</td>
+			<td>
+				Yes</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	&nbsp;</p>
+</section>
+<section id="how_it_works">
+	<div class="page-header"><h3>How it works</h3><hr class="notop"></div>
+<p>
+	<strong>EasyWeather</strong> is an amazing plugin that unifies different weather sources in one tiny widget. It currently works with 5 weather providers but it is designed to work with an unlimited number of sources. It implements a cascading fallback mechanism ensuring data is retrieved even if a provider is down or the consumer itself is throttled by a service. If the first provider fails to return the requested information, <strong>EasyWeather</strong> will contact the next one to maximise the availability of the service. <strong>EasyWeather</strong>&#39;s engine uses the same mechanism to detect users location and it currently supports 4 different geolocation services.</p>
+</section>
+<section id="options">
+	<div class="page-header"><h3>Options</h3><hr class="notop"></div>
+
+<p>
+	Below a full list of options you can use to configure this plugin:</p>
+<table border="1" class="tbl-doc">
+	<thead>
+		<tr>
+			<th style="width:120px;">
+				Property</th>
+			<th style="width:70px;">
+				Type</th>
+			<th>
+				Description</th>
+			<th style="width:350px;">
+				Example</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<code>providerId</code></td>
+			<td>
+				string</td>
+			<td>
+				Set the weather data provider. It accepts one of the following values: &#39;yhw&#39;, &#39;wwo&#39;, &#39;owm&#39;, &#39;wug&#39;, &#39;ham&#39; - default: &#39;yhw&#39;.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({ 
+	providerId: &#39;ham&#39; 
+});</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>providerSequence</code></td>
+			<td>
+				boolean</td>
+			<td>
+				Enable/disable the retries sequence mechanism for retrieving weather data - default: true.
+				<p>
+					<i>Remarks</i><br>
+					This fallback mechanism will work only if there is at least one weather API account set.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({ 
+	providerSequence: false 
+});</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>providerSequenceIds</code></td>
+			<td>
+				string</td>
+			<td>
+				Define the list of providers to sequentially fallback to in case of weather API call failure, default: &#39;yhw|wwo|owm|ham|wug&#39;.
+				<p>
+					<i>Remarks</i><br>
+					If you decide to use only some of the weather API providers then it is better performance-wise to remove the unused providers.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({ 
+	providerSequenceIds: &#39;ham|yhw|wug&#39; 
+});</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>geoProviderId</code></td>
+			<td>
+				string</td>
+			<td>
+				Set the geolocation provider. It accepts one of the following values: &#39;geopl&#39;, &#39;fgip&#39;, &#39;maxmd&#39; - default: &#39;geopl&#39;.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	geoProviderId: &#39;maxmd&#39;
+});</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>geoProviderSequence</code></td>
+			<td>
+				boolean</td>
+			<td>
+				Enable/disable the retries sequence mechanism for geolocating user - default: true.
+				<p>
+					<i>Remarks</i><br>
+					This fallback mechanism will work only if there is at least one geolocation API account set.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	geoProviderSequence: false
+});</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>geoProviderSequenceIds</code></td>
+			<td>
+				string</td>
+			<td>
+				Define the list of geolocation providers to sequentially fallback to in case of API call failure, default: &#39;geopl|fgip|maxmd&#39;.
+				<p>
+					<i>Remarks</i><br>
+					If you decide to use only some of the geolocation API services then it is better performance-wise to remove the unused providers.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	geoProviderSequenceIds: &#39;fgip|maxmd&#39;
+});</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>language</code></td>
+			<td>
+				string</td>
+			<td>
+				Set the language of the weather information - Default: null
+				<p>
+					<i>Remarks</i><br>
+					Only the Open Weather Map service supports languages: <code>en</code> English - en, <code>ru</code> Russian - ru, <code>it</code> Italian - it, <code>sp</code> Spanish - sp, <code>ua</code> Ukrainian - ua, <code>de</code> German - de, <code>pt</code> Portuguese - pt, <code>ro</code> Romanian - ro, <code>pl</code> Polish - pl, <code>fi</code> Finnish - fi, <code>nl</code> Dutch - nl, <code>fr</code> French - fr, <code>bg</code> Bulgarian - bg, <code>se</code> Swedish - se, <code>zh_tw</code> Chinese Traditional - zh_tw, <code>zh_cn</code> Chinese Simplified - zh_cn, <code>tr</code> Turkish - tr, <code>cz</code> Czech - cz,</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	providerId: &#39;owm&#39;,
+	language: &#39;sp&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>location</code></td>
+			<td>
+				string</td>
+			<td>
+				Set the weather&#39;s information location. If not set the widget will auto-detect the location of the user - default: &#39;auto&#39;.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	location: &#39;Manila&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>enableGeolocation</code></td>
+			<td>
+				boolean</td>
+			<td>
+				Enable/disable the browser&#39;s HTML 5 geolocation feature for detecting the user&#39;s location - default: false.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	enableGeolocation: true
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>localStorage</code></td>
+			<td>
+				boolean</td>
+			<td>
+				If set true the weather information will be stored in the browser&#39;s localStorage - default: true
+				<p>
+					<i>Remarks</i><br>
+					If disabled the script fallbacks to a cookie based storage</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	localStorage: false
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>cacheDuration</code></td>
+			<td>
+				number</td>
+			<td>
+				Set the duration of the cached information - default: 3600000 (1 hour in msecs)
+				<p>
+					<i>Remarks</i><br>
+					In order to reduce the API calls, the script caches the weather information locally and it will perform a call again only when the stored information has expired.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	cacheDuration: 1800000 //30 mins in msecs
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>weekDays</code></td>
+			<td>
+				array</td>
+			<td>
+				Specify the list of week days - default: [&#39;Sun&#39;, &#39;Mon&#39;, &#39;Tue&#39;, &#39;Wed&#39;, &#39;Thu&#39;, &#39;Fri&#39;, &#39;Sat&#39;]
+				<p>
+					<i>Remarks</i><br>
+					Sunday must be the first day of the week as it is the first day of the days collection in javascript (0 index). <code>forecasts</code> must be on.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	forecasts: true,
+	weekDays: [&#39;Dom&#39;, &#39;Lun&#39;, &#39;Mar&#39;, &#39;Mer&#39;, &#39;Gio&#39;, &#39;Ven&#39;, &#39;Sab&#39;]
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>todayLabel</code></td>
+			<td>
+				string</td>
+			<td>
+				Specify the text for the &#39;Today&#39; label under the weather icon - default: &#39;Today&#39;</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	todayLabel: &#39;Oggi&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>orientation</code></td>
+			<td>
+				string</td>
+			<td>
+				Set the orientation of the widget when the forecasts are displayed - default: &#39;vertical&#39;.
+				<p>
+					<i>Remarks</i><br>
+					Two possible values: &#39;vertical&#39; and &#39;horizontal&#39;. <code>forecasts</code> must be on.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	forecasts: true,
+	orientation: &#39;horizontal&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>template</code></td>
+			<td>
+				object</td>
+			<td>
+				Set the template object to be used by the script.
+				<p>
+					<i>Remarks</i><br>
+					The default template object contains 2 properties: <code>current</code>, <code>forecast</code>. The custom template object may override the <code>current</code> or <code>forecast</code> properties. Below a complete list of placeholders for the <code>current</code> condition template: <code>{icn}</code>, <code>{desc}</code>, <code>{date}</code>, <code>{Condition.provider_link}</code>, <code>{lnkforecasts}</code>, <code>{temp}</code>, <code>{minmax}</code>, <code>{Condition.description}</code>, <code>{Condition.humidity}</code>, <code>{Condition.precipitation}</code>, <code>{Condition.wind}</code>, <code>{Condition.pressure}</code>, <code>{Condition.visibility}</code>, <code>{forecastsdisplay}</code>, <code>{forecasts}</code>, <code>{cssprfx}</code><br>
+					and the placeholders for <code>forecast</code> template: <code>{icn}</code>, <code>{icndesc}</code>, <code>{date}</code>, <code>{minmax}</code>, <code>{desc}</code>, <code>{cssprfx}</code></p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	template: {
+		current: &#39;&lt;div&gt;{temp}: {desc}&lt;/div&gt;&#39;
+	}
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>header</code></td>
+			<td>
+				boolean</td>
+			<td>
+				Show/hide the header element displaying the location - default: true</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({ 
+	header: false
+});
+</pre>
+			</td>
+		</tr>
+		<!--
+	<tr> 
+        <td><code>searchBox</code></td>
+        <td>boolean</td>
+        <td>
+			Enable/disable the search text-box - default: false
+		</td>
+        <td>
+<pre>
+var ew = $('.ew').EasyWeather({
+	enableSearch: true,
+	searchBox: true
+});
+</pre>
+		</td>
+      </tr>
+      -->
+		<tr>
+			<td>
+				<code>refreshLink</code></td>
+			<td>
+				boolean</td>
+			<td>
+				Show/hide the refresh button located at the bottom right corner of the widget - default: true.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	refreshLink: false
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>enableSearch</code></td>
+			<td>
+				boolean</td>
+			<td>
+				Enable/disable the custom location search - default: false
+				<p>
+					<i>Remarks</i><br>
+					If enabled it turns the <code>searchBox</code> option on.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	enableSearch: true
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>nbSearchResults</code></td>
+			<td>
+				number</td>
+			<td>
+				Specify the number of results for a searched location. The maximum number of results depends on the provider.
+				<p>
+					<i>Remarks</i><br>
+					<code>enableSearch</code> has to be true.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	enableSearch: true,
+	nbSearchResults: 10
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>forecasts</code></td>
+			<td>
+				boolean</td>
+			<td>
+				Enable/disable the forecasts section - default: false</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	forecasts: true
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>forecastsLink</code></td>
+			<td>
+				boolean</td>
+			<td>
+				Show/hide the forecasts link expanding/collapsing the forecasts section - default: false.
+				<p>
+					<i>Remarks</i><br>
+					<code>forecasts</code> has to be enabled.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	forecasts: true,
+	forecastsLink: true
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>nbForecastDays</code></td>
+			<td>
+				number</td>
+			<td>
+				Define the number of days for the forecasts. The maximum number of days depends on the provider.
+				<p>
+					<i>Remarks</i><br>
+					Check the <a href="#providers-list">Providers</a> list to know what is the maximum number of days for the forecasts. <code>forecasts</code> has to be enabled.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	forecasts: true,
+	nbForecastDays: 5
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>tempUnit</code></td>
+			<td>
+				string</td>
+			<td>
+				Specify the unit, Celsius or Fahrenheit, for the temperature - default: &#39;C&#39;.
+				<p>
+					<i>Remarks</i><br>
+					Two possible values &#39;C&#39; and &#39;F&#39;. <code>showUnit</code> has to be enabled.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	tempUnit: &#39;F&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>showUnit</code></td>
+			<td>
+				boolean</td>
+			<td>
+				Show/hide the temperature unit next to the temperature - default: true</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	showUnit: false
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>windSpeedUnit</code></td>
+			<td>
+				string</td>
+			<td>
+				Set the unit for the wind speed - default: &#39;Kmph&#39;.
+				<p>
+					<i>Remarks</i><br>
+					Two possible values &#39;Kmph&#39; and &#39;Miles&#39;. <code>showDetails</code> has to be enabled.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	showDetails: true,
+	windSpeedUnit: &#39;Miles&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>showCountry</code></td>
+			<td>
+				boolean</td>
+			<td>
+				Display the country next to the city in the header or search text-box when location is resolved - default: true</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	showCountry: false
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>showRegion</code></td>
+			<td>
+				boolean</td>
+			<td>
+				Display the region/state next to the city in the header or search text-box when location is resolved - default: false</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	showRegion: true
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>showMinMax</code></td>
+			<td>
+				boolean</td>
+			<td>
+				Enable/disable the max/min temparatures for the day - default: true</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	showMinMax: false
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>showDescription</code></td>
+			<td>
+				boolean</td>
+			<td>
+				Enable/disable the weather description under the current temperature (ex: &#39;clear sky&#39;) - default: true</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	showDescription: false
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>showDetails</code></td>
+			<td>
+				boolean</td>
+			<td>
+				Enable/disable the detailed information for the current condition - default: false</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	showDetails: true
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>details</code></td>
+			<td>
+				string</td>
+			<td>
+				Define the information to be displayed in the current condition details - default: &#39;humidity|precipitation|wind|pressure|visibility&#39;
+				<p>
+					<i>Remarks</i><br>
+					The value has to be a &#39;|&#39; separated list and the order of the items is ignored. <code>showDetails</code> has to be enabled.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	showDetails: true,
+	details: &#39;humidity|wind&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>detailLabels</code></td>
+			<td>object</td>
+			<td>
+				Specify the labels for the condition details - default: 
+<pre>{
+	humidity: 'Humidity: ',
+	precipitation: 'Precipitation: ',
+	wind: 'Wind: ',
+	pressure: 'Pressure: ',
+	visibility: 'Visibility: '
+}</pre>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	showDetails: true,
+	details: &#39;humidity|wind&#39;,
+	detailLabels: { 
+		humidity: &#39;Humidité: &#39;,
+		wind: &#39;Vent: &#39;
+	} 
+});
+</pre>				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>width</code></td>
+			<td>
+				string</td>
+			<td>
+				Set the widget&#39;s width (ex: &#39;100px&#39; or &#39;auto&#39;) - default: null</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	width: &#39;185px&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>height</code></td>
+			<td>
+				string</td>
+			<td>
+				Set the widget&#39;s height (ex: &#39;100px&#39; or &#39;auto&#39;) - default: null</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	height: &#39;120px&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>basePath</code></td>
+			<td>
+				string</td>
+			<td>
+				Define the script&#39;s base path - default: &#39;EasyWeather/&#39;</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	basePath: &#39;MyPath/EasyWeather/&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>theme</code></td>
+			<td>
+				string</td>
+			<td>
+				Set the widget&#39;s theme - default: &#39;ew-light-blue&#39;
+				<p>
+					<i>Remarks</i><br>
+					Available themes: <code>ew-dark-grey</code>, <code>ew-yellow</code>, <code>ew-green</code>, <code>ew-purple</code>, <code>ew-teal</code>, <code>ew-skyblue</code>, <code>ew-orange</code>, <code>ew-dark-purple</code>, <code>ew-brown</code>, <code>ew-transparent</code>.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	theme: &#39;ew-brown&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>cssContainer</code></td>
+			<td>
+				string</td>
+			<td>
+				Define the CSS class applied to the element containing the whole widget - default: &#39;ew-container&#39;</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	cssContainer: &#39;my-css-class-here&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>cssForm</code></td>
+			<td>
+				string</td>
+			<td>
+				Define the CSS class applied to the form element - default: &#39;ew-form&#39;.
+				<p>
+					<i>Remarks</i><br>
+					Ignored if <code>enableSearch</code> option is off.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	cssForm: &#39;my-css-class-here&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>cssInput</code></td>
+			<td>
+				string</td>
+			<td>
+				Define the CSS class applied to the serch text-box element - default: &#39;ew-input&#39;.
+				<p>
+					<i>Remarks</i><br>
+					Ignored if <code>enableSearch</code> option is off.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	cssInput: &#39;my-css-class-here&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>cssHeader</code></td>
+			<td>
+				string</td>
+			<td>
+				Define the CSS class applied to the header element (location label) - default: &#39;ew-header&#39;.
+				<p>
+					<i>Remarks</i><br>
+					Depends on the <code>header</code> option, if <code>enableSearch</code> is true then it will be ignored.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	cssHeader: &#39;my-css-class-here&#39;
+});
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>cssContent</code></td>
+			<td>
+				string</td>
+			<td>
+				Define the CSS class applied to the element containing the weather information (icon + temp) - default: &#39;ew-content&#39;</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	cssContent: &#39;my-css-class-here&#39;
+});
+</pre>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</section>
+<section id="events">
+	<div class="page-header"><h3>Events</h3><hr class="notop"></div>
+<table class="tbl-doc">
+	<thead>
+		<tr>
+			<th style="width:120px;">
+				Property</th>
+			<th style="width:70px;">
+				Type</th>
+			<th>
+				Description</th>
+			<th style="width:350px;">
+				Example</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<code>create</code></td>
+			<td>
+				callback</td>
+			<td>
+				Triggered after the weather widget is successfully generated in the DOM. The context within the callback is the EasyWeather instance.</td>
+			<td>
+				Initialize EasyWeather with the <code>create</code> callback specified:
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	create: function() {
+		console.log(this);
+	}
+ });</pre>
+				Bind an event listener to the <code>ew.create</code> event:
+				<pre>
+$(&#39;.ew&#39;).on(&#39;ew.create&#39;, function(e) {
+	$(this).css({ border: &#39;3px solid blue&#39; });
+});</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>load</code></td>
+			<td>
+				callback</td>
+			<td>
+				Triggered when the weather information is successfully displayed. The context within the callback is the EasyWeather instance.</td>
+			<td>
+				Initialize EasyWeather with the <code>load</code> callback specified:
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	load: function() {
+		console.log(this);
+	}
+});</pre>
+				Bind an event listener to the <code>ew.load</code> event:
+				<pre>
+$(&#39;.ew&#39;).on(&#39;ew.load&#39;, function(e, data) {
+	console.log(e, data);
+});</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>locate</code></td>
+			<td>
+				callback</td>
+			<td>
+				Fired when the requested location or current user&#39;s position is successfully resolved. The context within the callback is the EasyWeather instance.
+				<p>
+					<i>Remarks</i><br>
+					It receives a <code>data</code> literal object which is the location response object or the position object returned by the browser&#39;s native geolocation feature.</p>
+			</td>
+			<td>
+				Initialize EasyWeather with the <code>locate</code> callback specified:
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	locate: function(data) {
+		console.log(data);
+	}
+});</pre>
+				Bind an event listener to the <code>ew.locate</code> event:
+				<pre>
+$(&#39;.ew&#39;).on(&#39;ew.locate&#39;, function(e, data) {
+	console.log(e, data);
+});</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>search</code></td>
+			<td>
+				callback</td>
+			<td>
+				Called after a search is completed. The context within the callback is the EasyWeather instance.
+				<p>
+					<i>Remarks</i><br>
+					It receives a <code>data</code> literal object which is the search response object.</p>
+			</td>
+			<td>
+				Initialize EasyWeather with the <code>search</code> callback specified:
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	search: function(data) {
+		console.log(data);
+	}
+});</pre>
+				Bind an event listener to the <code>ew.search</code> event:
+				<pre>
+$(&#39;.ew&#39;).on(&#39;ew.search&#39;, function(e, data) {
+	console.log(e, data);
+});</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>error</code></td>
+			<td>
+				callback</td>
+			<td>
+				Called whenever an API call fails. The context within the callback is the EasyWeather instance.</td>
+			<td>
+				Initialize EasyWeather with the <code>error</code> callback specified:
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	error: function() { 
+		$(this).css({ border: &#39;3px solid red&#39; });
+	}
+});</pre>
+				Bind an event listener to the <code>ew.error</code> event:
+				<pre>
+$(&#39;.ew&#39;).on(&#39;ew.error&#39;, function(e, msg) {
+	console.log(e, msg);
+});</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>fnLocate</code></td>
+			<td>
+				delegate</td>
+			<td>
+				Use this delegate to resolve the user&#39;s location with an alternative service. The context within this method is the EasyWeather instance.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	fnLocate: function () {
+		// Your logic here: AJAX call to alternative endpoint
+		this.showSpinner();
+    	var o = this,
+    		url =  (location.protocol.indexOf(&#39;file&#39;) != -1 ? &#39;http:&#39; : location.protocol) + 
+    				&#39;//j.maxmind.com/app/geoip.js&#39;,
+    		loc, city, country;
+ 
+    			$.getScript(url, function() {
+		            city = geoip_city(),
+		            country = geoip_country_name(),
+		            loc =  city + (o.config().showCountry ? &#39;, &#39; + country : &#39;&#39;);
+		            o.setLocation(loc, true);
+		        });
+	}	
+});</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>fnLoad</code></td>
+			<td>
+				delegate</td>
+			<td>
+				Use this delegate to load weather information with your own custom logic. The context within this method is the EasyWeather instance.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	fnLoad: function () {
+		var location = this.location;
+		// Your logic here: AJAX call to alternative endpoint
+	}
+});</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>fnSearch</code></td>
+			<td>
+				delegate</td>
+			<td>
+				Use this delegate to perform the location search. The context within this method is the EasyWeather instance.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	fnSearch: function () {
+		var location = this.getAskedLocation();
+		// Your logic here: AJAX call to alternative endpoint
+	}
+});</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>fnSetIconUrl</code></td>
+			<td>
+				delegate</td>
+			<td>
+				Use this delegate to set your own weather icon URL instead of the API one. It receives the current condition object as parameter: <code>fnSetIconUrl: function(o){}</code></td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather({
+	fnSetIconUrl: function(o){
+		var code = o.code;
+		return &#39;/img/weather/&#39;+ code + &#39;.png&#39;;
+	}
+});</pre>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</section>
+<section id="properties">
+	<div class="page-header"><h3>Properties</h3><hr class="notop"></div>
+
+<table class="tbl-doc">
+	<thead>
+		<tr>
+			<th style="width:120px;">
+				Property</th>
+			<th style="width:70px;">
+				Type</th>
+			<th>
+				Description</th>
+			<th style="width:350px;">
+				Example</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<code>config()</code></td>
+			<td>
+				method</td>
+			<td>
+				It returns the configuration object</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+console.log(ew[0].config());</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>provider()</code></td>
+			<td>
+				method</td>
+			<td>
+				It returns the current weather provider object.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+console.log(ew[0].provider());</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>getWeatherProviderIds()</code></td>
+			<td>
+				method</td>
+			<td>
+				It returns the list of weather providers.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+console.log(ew[0].getWeatherProviderIds());</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>geoProvider()</code></td>
+			<td>
+				method</td>
+			<td>
+				It returns the current geolocation provider.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+console.log(ew[0].geoProvider());</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>getGeoProviderIds()</code></td>
+			<td>
+				method</td>
+			<td>
+				It returns the list of geolocation providers.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+console.log(ew[0].getGeoProviderIds());</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>setWeatherProvider( id )</code></td>
+			<td>
+				method</td>
+			<td>
+				It sets the supplied <code>id</code> as the current weather provider.
+				<p>
+					<i>Remarks</i><br>
+					<code>providerSequence</code> must be true.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+ew[0].setWeatherProvider(&#39;wug&#39;);</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>setGeoProvider( id )</code></td>
+			<td>
+				method</td>
+			<td>
+				It sets the supplied <code>id</code> as the current geolocation provider.
+				<p>
+					<i>Remarks</i><br>
+					<code>geoProviderSequence</code> must be true.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+ew[0].setGeoProvider(&#39;maxmd&#39;);</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>load()</code></td>
+			<td>
+				method</td>
+			<td>
+				It loads the weather information and displays it.
+				<p>
+					<i>Remarks</i><br>
+					If the requested information is already cached and not expired yet, it will retrieve the data from the cache (localStorage or cookie).</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+ew[0].load();</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>locate()</code></td>
+			<td>
+				method</td>
+			<td>
+				It resolves the current location, displays it in the header or search text-box and finally loads the weather information.
+				<p>
+					<i>Remarks</i><br>
+					If the requested information is already cached and not expired yet, it will retrieve the data from the cache (localStorage or cookie).</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+ew[0].locate();</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>refresh( resetOriginalProvider )</code></td>
+			<td>
+				method</td>
+			<td>
+				It refreshes the current geolocation and weather information and stores it in the cache again.
+				<p>
+					<i>Remarks</i><br>
+					If <code>resetOriginalProvider</code> true, it resets the original weather provider if it was previously changed.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+ew[0].refresh();</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>getWeatherData()</code></td>
+			<td>
+				method</td>
+			<td>
+				It returns the current parsed weather object.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+console.log(ew[0].getWeatherData());</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>getLocation()</code></td>
+			<td>
+				method</td>
+			<td>
+				It returns the current parsed location or the requested location if a location was previously specified.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+console.log(ew[0].getLocation());</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>setLocation( location, loadInfo )</code></td>
+			<td>
+				method</td>
+			<td>
+				It sets the supplied location and loads the weather information if <code>loadInfo</code> argument is true.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+ew[0].setLocation(&#39;New York&#39;, true);</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>displayLocation( location )</code></td>
+			<td>
+				method</td>
+			<td>
+				It displays the supplied text in the header or search text-box element.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+ew[0].displayLocation(&#39;Hello world!&#39;);</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>getStoredItemName( location, isForecasts )</code></td>
+			<td>
+				method</td>
+			<td>
+				It returns the name of the current stored information.
+				<p>
+					<i>Remarks</i><br>
+					If the optional <code>location</code> argument is supplied, it will return the item name for the specified location. If the <code>isForecasts</code> is true it returns the name of the forecasts data.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+console.log(ew[0].getStoredItemName());</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>getValidStoredItem( name, requestTime )</code></td>
+			<td>
+				method</td>
+			<td>
+				It returns a valid cached item, that is cached data not expired yet.
+				<p>
+					<i>Remarks</i><br>
+					Both <code>name</code> and <code>requestTime</code> are mandatory. <code>requestTime</code> is the current date time in milliseconds and it is used to compare it against the time stamp of the stored item. If the difference is greater than the cache duration, then the item is considered expired and a <code>null</code> value is returned by the method.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+var name = ew[0].getStoredItemName();
+var item = ew[0].getValidStoredItem(name, new Date().getTime());
+console.log(item);</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>storeItem( name, data, timestamp )</code></td>
+			<td>
+				method</td>
+			<td>
+				Stores the supplied <code>data</code> object in the cache (localStorage or cookie).
+				<p>
+					<i>Remarks</i><br>
+					<code>name</code> is the key of the weather data and it is mandatory. <code>data</code> is the weather object to be stored as a JSON string. <code>timestamp</code> is date time of the current data, it is optional. If not supplied in will set the current date time.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+var name = ew[0].getStoredItemName();
+var data = { data: {} };
+ew[0].storeItem(name, data);</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>removeStoredItem( name )</code></td>
+			<td>
+				method</td>
+			<td>
+				Removes from the cache the data object corresponding to the supplied <code>name</code>.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+var name = ew[0].getStoredItemName();
+ew[0].removeStoredItem(name);</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>clearCache()</code></td>
+			<td>
+				method</td>
+			<td>
+					It clears the cached information for the current location.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+console.log(ew[0].clearCache());</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>clearAllCache()</code></td>
+			<td>
+				method</td>
+			<td>
+					It clears all the information cached by the app.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+console.log(ew[0].clearAllCache());</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>getTemplate( type )</code></td>
+			<td>
+				method</td>
+			<td>
+				It returns the HTML string of the requested template.
+				<p>
+					<i>Remarks</i><br>
+					<code>type</code> can have 2 possible values: <code>current</code> and <code>forecast</code>.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+console.log(ew[0].getTemplate(&#39;forecast&#39;));</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>getWeekDay( date )</code></td>
+			<td>
+				method</td>
+			<td>
+				It returns the weekday string for a given date.
+				<p>
+					<i>Remarks</i><br>
+					<code>date</code> must be a date object. The returned day string comes from the days defined in the <code>weekDays</code> option.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+console.log(ew[0].getWeekDay(new Date()));</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>showError( message )</code></td>
+			<td>
+				method</td>
+			<td>
+				It show the error message defined by <code>message</code>.
+				<p>
+					<i>Remarks</i><br>
+					The error message replaces the whole weather content.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+ew[0].showError(&#39;Hello world!&#39;);</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>showSpinner(message, container)</code></td>
+			<td>
+				method</td>
+			<td>
+				It shows the loader image with the supplied <code>message</code>.
+				<p>
+					<i>Remarks</i><br>
+					<code>container</code> is optional and it defines the jQuery element containing the spinner and the message.</p>
+			</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+ew[0].showSpinner(&#39;Hello world!&#39;);</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>cont</code></td>
+			<td>
+				property</td>
+			<td>
+				It references the jQuery element containing the weather information.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+console.log(ew[0].cont);</pre>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>header</code></td>
+			<td>
+				property</td>
+			<td>
+				It references the jQuery element containing the header content.</td>
+			<td>
+				<pre>
+var ew = $(&#39;.ew&#39;).EasyWeather();
+console.log(ew[0].header);</pre>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</section>
+
+	</div>
+</body>
+</html>

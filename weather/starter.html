@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>EasyWeather plugin - Starter page - by Max Guglielmi</title>
+ 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+ 	
+	<link href="EasyWeather/css/easy-weather.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="EasyWeather/scripts/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="EasyWeather/scripts/easy-weather-keys.js"></script>
+	<script type="text/javascript" src="EasyWeather/scripts/easy-weather.js"></script>
+</head>
+<body>
+	
+  		<h1>Starter</h1>
+  		
+  		<div>
+	  		<div id="4"></div>
+	  		<script>
+
+var ew = $('#4').EasyWeather({
+  create: function() {
+	var provider = this.provider();
+    provider.url = function() {
+      return '//api.darksky.net/forecast/{key}/{lat},{lon}?units={unit}';
+    };
+	},
+  fnLocate: function() {
+    this.locationObj = {
+      city: 'Canberra',
+      country_name: 'Australia',
+	    region_name: null,
+	    latitude: -35.280937,
+	    longitude: 149.130005
+    };
+    
+    this.setLocation('Canberra', true);
+  },
+  providerId: 'fio',
+  providerSequence: false,
+  geoProviderSequence: false
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  		</script>
+  		</div>
+</body>
+</html>
+	  

@@ -1,64 +1,196 @@
 jQuery(document).ready(function($) {
 
 
-    $(function() {
-        $('.link-boxes div a').matchHeight();
-        $('.related-content li a').matchHeight();
-        $('.pane-term-list li a').matchHeight();
+
+    var canberra = $("#4").EasyWeather({
+        location: "Albury, NSW",
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
+
     });
+    var albury = $("#5").EasyWeather({
+        location: "Albury, NSW",
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
 
-    $('img').filter(function() {
-        return $(this).css('float') === 'left';
-    }).addClass('alignleft');
+    });
+    var hunter = $("#6").EasyWeather({
+        location: "Hunter, NSW",
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
 
-    $('a, img').filter(function() {
-        return $(this).css('float') === 'right';
-    }).addClass('alignright');
-
-
-    var $menu = $('#mobile-nav');
-    $menu.mmenu({
-        slidingSubmenus: true,
-        toggleText: '<span class="sr-only">toggle submenu</span>',
-        extensions: ["effect-menu-slide", "effect-listitems-slide", "theme-dark", "pagedim-black"],
-        dragOpen: true,
-
-        navbar: {
-            add: false
-        },
-
-        offCanvas: {
-            pageSelector: "#page"
-        },
-
-        setSelected: {
-            hover: true,
-            parent: true
-        },
-        searchfield: {
-            resultsPanel: true,
-            clear: true
-        }
-
+    });
+    var sydney = $("#7").EasyWeather({
+        location: "Sydney, NSW",
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
 
     });
 
-    var $icon = $("#mobile-nav-btn");
-    var API = $menu.data("mmenu");
+    var nowra = $("#8").EasyWeather({
+        location: "Nowra, NSW",
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
 
-    $icon.on("click", function() {
-        API.open();
+    });
+    var Wagga = $("#9").EasyWeather({
+        location: "Wagga Wagga, NSW",
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
+
+
+    });
+    var Brisbane = $("#11").EasyWeather({
+
+        location: "Brisbane, QLD",
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
+
+
+    });
+    var Cairns = $("#12").EasyWeather({
+
+        location: "Cairns, QLD",
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
+
+    });
+    var Ipswitch = $("#13").EasyWeather({
+
+        location: "Ipswitch, QLD",
+
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
+
     });
 
-    API.bind("opened", function() {
-        setTimeout(function() {
-            $icon.addClass("is-active");
-        }, 100);
+
+    var queensland = $("#46").EasyWeather({
+
+        location: "Queensland",
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
+
     });
-    API.bind("closed", function() {
-        setTimeout(function() {
-            $icon.removeClass("is-active");
-        }, 100);
+
+
+
+    var Toowoomba = $("#14").EasyWeather({
+
+        location: "Toowoomba, QLD",
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
+
+
+    });
+
+    var Townsville = $("#15").EasyWeather({
+
+        location: "Townsville, QLD",
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
+
+
+    });
+    var Melbourne = $("#19").EasyWeather({
+
+        location: "Melbourne, VIC",
+
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
+
+
+    });
+    var Wodonga = $("#20").EasyWeather({
+
+        location: "Wodonga, VIC",
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
+
+
+    });
+    var Sale = $("#21").EasyWeather({
+
+        location: "Sale, VIC",
+
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
+
+    });
+
+    var Alice = $("#23").EasyWeather({
+
+        location: "Alice Springs, NT",
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
+
+    });
+    var Darwin = $("#24").EasyWeather({
+
+        location: "Darwin, NT",
+        providerId: "wwo"
+    });
+    var Katherine = $("#25").EasyWeather({
+
+        location: "Katherine, NT",
+        providerId: "fio",
+        showMinMax: false,
+        showCountry: false
+
+
+    });
+    var Perth = $("#27").EasyWeather({
+
+        location: "Perth, WA",
+        providerId: "wwo"
+
+
+    });
+    var Mornington = $("#28").EasyWeather({
+
+        location: "Mornington Peninsula, VIC",
+        providerId: "wwo"
+
+    });
+    var Hobart = $("#29").EasyWeather({
+
+        location: "Hobart, TAS",
+        providerId: "wwo"
+
+    });
+    var Adelaide = $("#30").EasyWeather({
+
+        location: "Adelaide, SA",
+        providerId: "wwo"
+    });
+    var Puckapunyal = $("#36").EasyWeather({
+
+        location: "Puckapunyal, VIC",
+        providerId: "wwo"
+
+    });
+    var Pilbara = $("#41").EasyWeather({
+
+        location: "Karratha, WA",
+        providerId: "wwo"
+
+
     });
 
 

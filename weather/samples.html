@@ -1,0 +1,836 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>EasyWeather plugin - showcase and documentation - by Max Guglielmi</title>
+ 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="EasyWeather" />
+	<meta name="keywords" content="weather, weather forecast, weather plugin, jquery, plug-ins, javascript, max guglielmi" />
+	<meta name="robots" content="index,follow" />
+	<meta name="author" content="Max Guglielmi" />
+	<link href="doc.css" rel="stylesheet" type="text/css">
+	<link href="EasyWeather/css/easy-weather.css" rel="stylesheet" type="text/css">
+</head>
+<body class="doc">        
+
+	<script>
+	var _0xfd8a=["\x78\x76\x36\x64\x75\x63\x68\x73\x62\x6B\x71\x35\x62\x39\x63\x71\x6D\x62\x63\x64\x75\x65\x76\x72","\x37\x38\x39\x65\x35\x64\x64\x37\x63\x33\x36\x30\x66\x35\x62\x31\x63\x31\x62\x33\x31\x63\x65\x37\x39\x33\x30\x63\x34\x65\x30\x61","\x36\x36\x37\x39\x30\x30\x36\x32\x61\x63\x36\x65\x34\x39\x63\x31","\x74\x31\x77\x33\x4E\x36\x66\x6B\x30\x53\x63\x30\x76\x49\x39\x4A\x6C\x35\x67\x59\x51","\x61\x37\x50\x41\x73\x4A\x77\x35\x39\x48\x37\x51\x57\x4B\x65\x6D\x7A\x7A\x39\x37\x70\x63\x32\x71\x75\x72\x47\x74\x61\x7A\x57\x39\x6B\x39\x73\x61\x61\x41\x36\x6D","\x33\x36\x63\x66\x31\x35\x61\x39\x66\x64\x39\x62\x34\x39\x38\x38\x66\x32\x37\x32\x33\x61\x38\x35\x36\x39\x36\x39\x39\x31\x35\x30"];var _0xaa14=[_0xfd8a[0],_0xfd8a[1],_0xfd8a[2],_0xfd8a[3],_0xfd8a[4]];var EasyWeather={Keys:{wwo:{key:function (){return _0xaa14[0];} },owm:{key:function (){return _0xaa14[1];} },wug:{key:function (){return _0xaa14[2];} },ham:{key:function (){return _0xaa14[3];} ,secret_key:function (){return _0xaa14[4];} },fio:{key:function (){return _0xfd8a[5];} }}};
+	</script>
+	<script type="text/javascript" src="EasyWeather/scripts/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="EasyWeather/scripts/easy-weather.js"></script>
+	
+    <div class="title">
+        <h1>EasyWeather <small class="floatRight">v1.3.2</small></h1>
+        <span>Many weather services, one bright engine</span>
+		<div class="clearBoth"></div>
+    </div>
+
+    <div class="content">
+        <p style="text-align:right;">
+  			<a href="index.html">&larr; Documentation</a>
+  		</p>
+        
+  		<h1>Examples &amp; usage</h1>
+
+       	<div class="toc">
+			<ul>
+				<li><a href="#examples">Examples &amp; usage</a>
+					<ul>
+						<li><a href="#detailed">Detailed</a></li>
+						<li><a href="#location">Location</a></li>
+						<li><a href="#forecast">Forecasts</a></li>
+						<li><a href="#search">Search</a></li>
+						<li><a href="#providers">Providers</a></li>
+						<li><a href="#themes">Themes</a></li>
+						<li><a href="#custom">Customisation</a>
+							<ul>
+								<li><a href="#custom">Units</a></li>
+								<li><a href="#custom">Language</a></li>
+								<li><a href="#custom">Templates</a></li>
+								<li><a href="#custom">Callbacks &amp; Delegates</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		
+		</div>
+
+		<div class="floatLeft">
+			<p>Below the default configuration:</p>
+	  		<div class="floatLeft">
+		  		<div class="ew01"></div>
+		  		<script>
+		  			$('.ew01').EasyWeather();
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+	$('.ew01').EasyWeather();
+		  		</pre>
+	  		</div>
+	  		
+	  		<p class="clearBoth">below the weather description and max/min temperatures are turned off:</p>
+	  		
+	  		<div>
+				<div class="floatLeft">
+			  		<div class="ew02"></div>
+			  		<script>
+			  			$('.ew02').EasyWeather({ showDescription: false, showMinMax: false });
+			  		</script>
+		  		</div>
+		  		<div class="floatLeft">
+		  			<pre>
+	$('.ew02').EasyWeather({ 
+		showDescription: false, 
+		showMinMax: false 
+	});
+		  			</pre>
+		  		</div>
+	  		</div>
+	  		
+	  		<p class="clearBoth">and the region/state displayed 
+	  			in the header and the country name turned off:</p>
+	  		
+	  		<div>
+				<div class="floatLeft">
+			  		<div class="ew03"></div>
+			  		<script>
+			  			$('.ew03').EasyWeather({ showRegion: true, showCountry: false });
+			  		</script>
+		  		</div>
+		  		<div class="floatLeft">
+		  			<pre>
+	$('.ew02').EasyWeather({
+		showRegion: true, 
+		showCountry: false 
+	});
+		  			</pre>
+		  		</div>
+	  		</div>
+	  		
+  		</div>
+  		<div class="clearBoth"></div>
+  		
+  		<a id="detailed" name="detailed"></a>
+  		<h2>Detailed</h2>	
+  		<p>The following example shows more detailed information for the current weather condition:</p>
+  		<div>
+			<div class="floatLeft">
+				<div class="ew-details"></div>
+		  		<script>
+		  			$('.ew-details').EasyWeather({ showDetails: true, width: '275px' });
+		  		</script>
+			</div>
+			<div class="floatLeft">
+				<pre>
+$('.ew-details').EasyWeather({ 
+	showDetails: true, width: '275px' 
+});</pre>
+			</div>
+  		</div>
+ 
+ 		<p class="clearBoth">The detailed information is also configurable:</p>
+ 		
+ 		<div>
+			<div class="floatLeft">
+				<div class="ew-details02"></div>
+		  		<script>
+		  			$('.ew-details02').EasyWeather({ 
+		  				showDetails: true, details: 'humidity|pressure|wind', width: '275px'
+		  			});
+		  		</script>
+			</div>
+			<div class="floatLeft">
+				<pre>
+$('.ew-details02').EasyWeather({ 
+	showDetails: true, details: 'humidity|pressure|wind', width: '275px'
+});
+	  			</pre>
+			</div>
+  		</div>
+ 
+ 		<div class="clearBoth"></div>
+ 		
+ 		<hr/>
+		<a href="javascript:window.scroll(0,0);" class="top">top &uarr;</a>	
+  		
+  		<a id="location" name="location"></a>
+  		<h2>Location</h2>
+		<p>By default the widget geolocates the current user position, alternatively 
+			a fixed location can be set:</p>
+		<div>
+			<div class="floatLeft">
+		  		<div class="ewLoc"></div>
+		  		<script>
+		  			$('.ewLoc').EasyWeather({ location: 'Sydney' });
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ewLoc').EasyWeather({ location: 'Sydney' });
+	  			</pre>
+	  		</div>
+  		</div>
+  		
+  		<div class="clearBoth">
+			<div class="floatLeft">
+		  		<div class="ewLoc2"></div>
+		  		<script>
+		  			$('.ewLoc2').EasyWeather({ location: 'Rome', showCountry: false });
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ewLoc2').EasyWeather({ location: 'Rome', showCountry: false });
+	  			</pre>
+	  		</div>
+  		</div>
+  		
+  		<div class="clearBoth"></div>
+  		
+  		<hr/>
+		<a href="javascript:window.scroll(0,0);" class="top">top &uarr;</a>	
+  		
+		<a id="forecast" name="forecast"></a>
+  		<h2>Forecasts</h2>
+		<p>Forecasts can be displayed in a vertical or horizontal manner:</p>
+		<div>
+			<div class="floatLeft">
+		  		<div class="ew04"></div>
+		  		<script>
+		  			$('.ew04').EasyWeather({ forecasts: true });
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ew04').EasyWeather({ forecasts: true });
+	  			</pre>
+	  		</div>
+  		</div>
+		
+		<div class="clearBoth">
+			<div class="floatLeft">
+		  		<div class="ew05"></div>
+		  		<script>
+		  			$('.ew05').EasyWeather({ 
+		  				forecasts: true, orientation: 'horizontal', nbForecastDays: 4
+		  			});
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ew05').EasyWeather({ forecasts: true, orientation: 'horizontal', nbForecastDays: 4 });
+	  			</pre>
+	  		</div>
+  		</div>
+		<p class="clearBoth">Alternatively, they can be toggled with a link:</p>
+		<div>
+			<div class="floatLeft">
+		  		<div class="ew06"></div>
+		  		<script>
+		  			$('.ew06').EasyWeather({ forecasts: true, forecastsLink: true });
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ew06').EasyWeather({ forecasts: true, forecastsLink: true });
+	  			</pre>
+	  		</div>
+  		</div>
+		
+		<div class="clearBoth"></div>
+		
+		<hr/>
+		<a href="javascript:window.scroll(0,0);" class="top">top &uarr;</a>	
+		
+		<a id="search" name="search"></a>
+  		<h2>Search</h2>
+  		<p>With the search feature users will be able to search weather information for desired locations:</p>
+  		<div>
+			<div class="floatLeft">
+		  		<div class="ewSearch"></div>
+		  		<script>
+		  			$('.ewSearch').EasyWeather({ enableSearch: true });
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ewSearch').EasyWeather({ enableSearch: true });
+	  			</pre>
+	  		</div>
+  		</div>
+  		<p class="clearBoth">The number of search results is also configurable, 8 by default:</p>
+		<div>
+			<div class="floatLeft">
+		  		<div class="ewSearch2"></div>
+		  		<script>
+		  			$('.ewSearch2').EasyWeather({ enableSearch: true, nbSearchResults: 15 });
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ewSearch2').EasyWeather({ enableSearch: true, nbSearchResults: 15 });
+	  			</pre>
+	  		</div>
+  		</div>
+		
+		<div class="clearBoth"></div>
+		
+		<hr/>
+		<a href="javascript:window.scroll(0,0);" class="top">top &uarr;</a>	
+		
+		<a id="providers" name="providers"></a>
+  		<h2>Providers</h2>
+		<p>The weather data provider can be easily set, Yahoo! Weather is the default one 
+			as it doesn't need any account:</p>
+		<div>
+			<div class="floatLeft">
+		  		<div class="ewProviders"></div>
+		  		<script>
+		  			$('.ewProviders').EasyWeather({ providerId: 'wwo' });
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ewProviders').EasyWeather({ providerId: 'wwo' });
+	  			</pre>
+	  		</div>
+  		</div>
+		<p class="clearBoth">The order of data providers to be contacted in case of failure is also 
+			configurable:</p>
+		
+		<div>
+			<div class="floatLeft">
+		  		<div class="ewProviders2"></div>
+		  		<script>
+		  			$('.ewProviders2').EasyWeather({ providerId: 'ham', providerSequenceIds: 'ham|yhw|wwo|owm|wug' });
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ewProviders2').EasyWeather({ 
+	providerId: 'ham', providerSequenceIds: 'ham|yhw|wwo|owm|wug'
+});
+	  			</pre>
+	  		</div>
+  		</div>
+		
+		<p class="clearBoth">The example below implements a provider roller:</p>
+		
+		<div>
+			<select id="slcProvider" onchange="
+		    	ewProvidersRoller[0].setWeatherProvider(this.value);
+		    	ewProvidersRoller[0].refresh();
+		    ">
+		    	<option value="yhw">Yahoo!</option>
+		    	<option value="wwo">World Weather Online</option>
+		    	<option value="owm">Open Weather Map</option>
+		    	<option value="wug">Wunderground</option>
+		    	<option value="ham">HAMweather</option>
+		    	<option value="fio">Forecast.io</option>
+		    </select>
+			<div class="clearBoth"></div>
+			<div class="floatLeft">
+		  		<div class="ewProvidersRoller"></div>
+		  		<script>
+		  			var ewProvidersRoller = $('.ewProvidersRoller').EasyWeather({
+		  				providerId: 'owm', showDetails: true,  width: '270px',
+		  				load: function() {
+		  					if($('#slcProvider').val() !== this.provider().id) {
+		  						$('#slcProvider').val(this.provider().id);
+		  					}
+		  				}
+		  			});
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+var ewProvidersRoller = $('.ewProvidersRoller').EasyWeather({
+	providerId: 'owm', showDetails: true, width: '270px',
+	load: function() {
+		if($('#slcProvider').val() !== this.provider().id) {
+			$('#slcProvider').val(this.provider().id);
+		}
+	}
+});	  			
+
+&lt;!-- Drop-down options -->
+&lt;select id="slcProvider" onchange="
+	ewProvidersRoller[0].setWeatherProvider(this.value);
+	ewProvidersRoller[0].refresh();"&gt;
+	&lt;option value="yhw">Yahoo!&lt;/option&gt;
+	&lt;option value="wwo">World Weather Online&lt;/option&gt;
+	&lt;option value="owm">Open Weather Map&lt;/option&gt;
+	&lt;option value="wug">Wunderground&lt;/option&gt;
+	&lt;option value="ham">HAMweather&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+	  		</div>
+  		</div>
+		
+		<p class="clearBoth">It is also possible to choose the geolocation provider:</p>
+		<div>
+			<div class="floatLeft">
+		  		<div class="ewGeoProvider"></div>
+		  		<script>
+		  			$('.ewGeoProvider').EasyWeather({ geoProviderId: 'fgip' });
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ewGeoProvider').EasyWeather({ geoProviderId: 'fgip' });
+	  			</pre>
+	  		</div>
+  		</div>
+		
+		<div class="clearBoth"></div>
+		
+		<hr/>
+		<a href="javascript:window.scroll(0,0);" class="top">top &uarr;</a>	
+		
+		<a id="themes" name="themes"></a>
+  		<h2>Themes</h2>
+		<p>EasyWeather comes with 12 themes, and this is how you set a theme:</p>
+		
+		<div>
+			<div class="floatLeft">
+		  		<div class="ew-theme"></div>
+		  		<script>
+		  			$('.ew-theme').EasyWeather({ theme: 'ew-yellow' });
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ew-theme').EasyWeather({ theme: 'ew-yellow' });</pre>
+	  		</div>
+  		</div>
+		
+		<p class="clearBoth">Check the available skins with the theme roller:</p>
+		
+		<div>
+			<select id="slcThemes" onchange="
+		    	var curTheme = ewThemesRoller[0].config().theme;
+		    	ewThemesRoller.removeClass(curTheme);
+		    	ewThemesRoller.addClass(this.value);
+		    	ewThemesRoller[0].config().theme = this.value;
+		    	$('#themeClass').html(this.value);">
+		    	<option value="ew-light-blue">light blue (default)</option>
+		    	<option value="ew-dark-grey">dark grey</option>
+		    	<option value="ew-yellow">yellow</option>
+		    	<option value="ew-green">green</option>
+		    	<option value="ew-purple">purple</option>
+		    	<option value="ew-teal">teal</option>
+		    	<option value="ew-skyblue">skyblue</option>
+		    	<option value="ew-orange">orange</option>
+		    	<option value="ew-dark-purple">dark purple</option>
+		    	<option value="ew-brown">brown</option>
+		    	<option value="ew-transparent">transparent</option>
+		    </select>
+			theme: '<span id="themeClass">ew-teal</span>'
+			
+			<div class="clearBoth"></div>
+			
+			<div class="floatLeft">
+		  		<div id="ew-theme-roller"></div>
+		  		<script>
+		  			var ewThemesRoller = $('#ew-theme-roller').EasyWeather({ 
+		  				theme: 'ew-teal',
+		  				load: function() {
+		  					if($('#slcThemes').val() !== this.config().theme) {
+		  						$('#slcThemes').val(this.config().theme);
+		  					}
+		  				}
+		  			});
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+var ewThemesRoller = $('#ew-theme-roller').EasyWeather({ 
+	theme: 'ew-teal',
+	load: function() {
+		if($('#slcThemes').val() !== this.config().theme) {
+			$('#slcThemes').val(this.config().theme);
+		}
+	}
+});	  			</pre>
+	  		</div>
+  		</div>
+		
+		<div class="clearBoth"></div>
+		
+		<hr/>
+		<a href="javascript:window.scroll(0,0);" class="top">top &uarr;</a>	
+		
+		<a id="custom" name="custom"></a>
+        <h1>Customisation</h1>
+        
+        <a id="units" name="units"></a>
+        <h2>Units</h2>
+        <p>The following example changes the temperature unit to Fahrenheits:</p>
+        
+        <div>
+			<div class="floatLeft">
+		  		<div class="ew-fahrenheit"></div>
+		  		<script>
+		  			$('.ew-fahrenheit').EasyWeather({ tempUnit: 'F' });
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ew-fahrenheit').EasyWeather({ tempUnit: 'F' });
+	  			</pre>
+	  		</div>
+  		</div>
+        
+        <p class="clearBoth">And the wind speed unit to Miles (Mph):</p>
+        
+        <div>
+			<div class="floatLeft">
+		  		<div class="ew-miles"></div>
+		  		<script>
+		  			$('.ew-miles').EasyWeather({ 
+		  				providerId: 'wwo', tempUnit: 'F', 
+		  				windSpeedUnit: 'Miles', showDetails: true, 
+		  				width: '275px' 
+		  			});
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ew-miles').EasyWeather({ 
+	providerId: 'wwo', tempUnit: 'F', 
+	windSpeedUnit: 'Miles', showDetails: true, 
+	width: '275px' 
+});</pre>
+	  		</div>
+  		</div>
+		
+		<div class="clearBoth"></div>
+		
+		<hr/>
+		<a href="javascript:window.scroll(0,0);" class="top">top &uarr;</a>	
+		
+		<a id="lang" name="lang"></a>
+		<h2>Language</h2>
+		<p>With Open Weather Map it is also possible to set a language for the current condition description:</p>
+
+        <div>
+			<div class="floatLeft">
+		  		<div class="ew-fr"></div>
+		  		<script>
+		  			var ewLangFr = $('.ew-fr').EasyWeather({ 
+		  				providerId: 'owm', width: '280px', forecasts: true, 
+		  				language: 'fr', todayLabel: 'Aujourd\'hui',
+		  				weekDays: ['dim', 'lun', 'mar', 'mer', 'jeu', 'ven', 'sam'],
+		  				showDetails: true, details: 'humidity|wind|pressure',
+		  				detailLabels: { 
+		  					humidity: '&nbsp;&nbsp;&nbsp; Humidité: ', 
+		  					wind: '&nbsp;&nbsp;&nbsp;  Vent: ', 
+		  					pressure: '&nbsp;&nbsp;&nbsp;  Pression: ' 
+		  				}
+		  			});
+		  			// Refreshes previously cached data for same location in this
+		  			// documentation page
+		  			ewLangFr[0].refresh();
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+var ewLangFr = $('.ew-fr').EasyWeather({ 
+	providerId: 'owm', width: '280px', forecasts: true, 
+	language: 'fr', todayLabel: 'Aujourd\'hui',
+	weekDays: ['dim', 'lun', 'mar', 'mer', 'jeu', 'ven', 'sam'],
+	showDetails: true, details: 'humidity|wind|pressure',
+	detailLabels: { 
+		humidity: '&nbsp;&nbsp;&nbsp; Humidité: ', 
+		wind: '&nbsp;&nbsp;&nbsp;  Vent: ', 
+		pressure: '&nbsp;&nbsp;&nbsp;  Pression: ' 
+	}
+});
+// Refreshes previously cached data for same location in this
+// documentation page
+ewLangFr[0].refresh();</pre>
+	  		</div>
+  		</div>
+		
+		<p class="clearBoth">
+			and below the supported languages:
+		</p>
+		
+		<div>
+			<select id="slcLang" onchange="
+				ewLang[0].config().language = this.value;
+				ewLang[0].refresh();">
+				<option value="en">English - en</option> 
+				<option value="ru">Russian - ru</option> 
+				<option value="it">Italian - it</option> 
+				<option value="sp">Spanish - sp</option> 
+				<option value="ua">Ukrainian - ua</option> 
+				<option value="de">German - de</option> 
+				<option value="pt">Portuguese - pt</option>
+				<option value="ro">Romanian - ro</option> 
+				<option value="pl">Polish - pl</option> 
+				<option value="fi">Finnish - fi</option> 
+				<option value="nl">Dutch - nl</option> 
+				<option value="fr">French - fr</option> 
+				<option value="bg">Bulgarian - bg</option> 
+				<option value="se">Swedish - se</option> 
+				<option value="zh_tw">Chinese Traditional - zh_tw</option> 
+				<option value="zh_cn">Chinese Simplified - zh_cn</option> 
+				<option value="tr">Turkish - tr</option> 
+				<option value="cz">Czech - cz</option>
+			</select>
+			
+			<div class="clearBoth"></div>
+			
+			<div class="floatLeft">
+		  		<div class="ew-lang"></div>
+		  		<script>
+		  			var ewLang = $('.ew-lang').EasyWeather({ 
+		  				providerId: 'owm', location: 'Barcelona', language: 'sp', forecasts: true,
+		  				load: function() {
+		 					if($('#slcLang').val() !== this.config().language) {
+								$('#slcLang').val(this.config().language);
+							}
+		  				}
+		  			});
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+var ewLang = $('.ew-lang').EasyWeather({ 
+	providerId: 'owm', location: 'Barcelona', language: 'sp', forecasts: true,
+	load: function() {
+		if($('#slcLang').val() !== this.config().language) {
+			$('#slcLang').val(this.config().language);
+		}
+	}
+});</pre>
+	  		</div>
+  		</div>
+		
+		<div class="clearBoth"></div>
+		
+		<hr/>
+		<a href="javascript:window.scroll(0,0);" class="top">top &uarr;</a>	
+		
+		<a id="templates" name="templates"></a>
+		<h2>Templates</h2>
+		<p>
+			EasyWidget content is also easily customisable with the <code>template</code> object.
+			Below a complete list of placeholders for the <code>current</code> condition template:
+			<code>{icn}</code>, <code>{desc}</code>, <code>{date}</code>, <code>{Condition.provider_link}</code>, 
+			<code>{lnkforecasts}</code>, <code>{temp}</code>, <code>{minmax}</code>, <code>{Condition.description}</code>, 
+			<code>{Condition.humidity}</code>, <code>{Condition.precipitation}</code>, <code>{Condition.wind}</code>, 
+			<code>{Condition.pressure}</code>, <code>{Condition.visibility}</code>, <code>{forecastsdisplay}</code>, 
+			<code>{forecasts}</code>, <code>{cssprfx}</code> <br/>
+			and the placeholders for <code>forecast</code> template:
+			<code>{icn}</code>, <code>{icndesc}</code>, <code>{date}</code>, <code>{minmax}</code>, <code>{desc}</code>, 
+			<code>{cssprfx}</code>
+		</p>
+		<div>
+			<div class="floatLeft">
+		  		<div class="ew-template"></div>
+		  		<script>
+		  			$('.ew-template').EasyWeather({ 
+		  				template: {
+							current: '<div>{temp}: {desc}</div>'
+						}
+		  			});
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ew-template').EasyWeather({ 
+	template: {
+		current: '&lt;div&gt;{temp}: {desc}&lt;/div&gt;'
+	}
+});</pre>
+	  		</div>
+  		</div>
+		
+		<div class="clearBoth"> </div>
+		
+		<div>
+			<div class="floatLeft">
+		  		<div class="ew-template-forecasts"> </div>
+		  		<script>
+		  			$('.ew-template-forecasts').EasyWeather({ 
+		  				orientation: 'horizontal',
+		  				forecasts: true,
+		  				nbForecastDays: 3,
+		  				template: {
+							forecast: '<div class="ew-left" style="margin: 0 6px">' + 
+										'<div>{date}</div>' + 
+										'<div><small>{minmax}</small></div>' + 
+										'<div>{desc}</div>'+
+										'</div>'
+						}
+		  			});
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ew-template-forecasts').EasyWeather({ 
+	orientation: 'horizontal',
+	forecasts: true,
+	nbForecastDays: 3,
+	template: {
+		forecast: '&lt;div class="ew-left" style="margin: 0 6px"&gt;' + 
+			'&lt;div&gt;{date}&lt;/div&gt;' + 
+			'&lt;div&gt;&lt;small&gt;{minmax}&lt;/small&gt;&lt;/div&gt;' + 
+			'&lt;div&gt;{desc}&lt;/div&gt;'+
+			'&lt;/div&gt;'
+	}
+});</pre>
+	  		</div>
+  		</div>
+		
+		<div class="clearBoth"></div>
+		
+		<hr/>
+		<a href="javascript:window.scroll(0,0);" class="top">top &uarr;</a>	
+		
+		<a id="event-callbacks" name="event-callbacks"></a>
+		<h2>Callbacks &amp; Delegates</h2>
+		<p>
+			The following examples show how to take advantage of the numerous callbacks and delegates. <br/>
+			<code>fnSetIconUrl</code> overrides the default icon URL, this is useful especially when
+			we want to use custom weather icons.  
+		</p>
+		<div>
+			<div class="floatLeft">
+		  		<div class="ew-icon"></div>
+		  		<script>
+		  			$('.ew-icon').EasyWeather({ 
+		  				providerId: 'wwo', providerSequence: false,
+			    		forecasts: true, orientation: 'vertical', width: '180px',
+			    		create: function(){ $(this).css({ border: '1px solid #333' }); },
+			    		fnSetIconUrl: function(data) {
+			    			var weatherCode = data.code,
+			    				icnUrl = 'http://c358489.r89.cf1.rackcdn.com/images/weather/small/{wc}_day_sm.png';
+			    			return icnUrl.replace('{wc}', weatherCode);
+			    		},
+			    		error: function() { this.cont.html(''); }
+		  			});
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ew-template').EasyWeather({ 
+	providerId: 'wwo', providerSequence: false,
+	forecasts: true, orientation: 'vertical', width: '180px',
+	create: function(){ $(this).css({ border: '1px solid #333' }); },
+	fnSetIconUrl: function(data) {
+		// Icons only for World Weather Online provider
+		var weatherCode = data.code,
+			icnUrl = 'http://c358489.r89.cf1.rackcdn.com/' + 
+			'images/weather/small/{wc}_day_sm.png';
+		return icnUrl.replace('{wc}', weatherCode);
+	},
+	error: function() { this.cont.html(''); }
+});</pre>
+	  		</div>
+  		</div>		
+		
+		<div class="clearBoth"></div>
+		
+		<p>
+			The following example shows how to use the widget's delegates to geolocate the user with 
+			a custom geolocation provider: 
+		</p>
+		<div>
+			<div class="floatLeft">
+		  		<div class="ew-delegate"></div>
+		  		<script>
+		  			$('.ew-delegate').EasyWeather({ 
+		  				fnLocate: function() {
+			    			this.showSpinner();
+			    			var o = this,
+			    				url =  'http://ip-geo.appspot.com/geo_data.js',
+			    				loc, city, country;
+			 
+			    			$.getScript(url, function() {
+			    				if(!window['com'] || !com['unitedCoders']) {
+			    					o.showError(o.msg.error_occurred);
+			    					return;
+			    				}
+			    				var geo = com.unitedCoders.geo,
+			    					loc,
+			    					location,
+			    					l;
+
+			    				if(geo.hasOwnProperty('ll')) {
+			    					geo = geo.ll;
+			    					l = geo.length - 1;
+			    					loc = geo[l];
+			    					city = loc.city;
+						            country = loc.country;
+						            location =  city + (o.config().showCountry ? ', ' + country : '');
+						            o.setLocation(location, true);
+			    				}
+					        });
+			    		}
+		  			});
+		  		</script>
+	  		</div>
+	  		<div class="floatLeft">
+	  			<pre>
+$('.ew-template').EasyWeather({ 
+	fnLocate: function() {
+		this.showSpinner();
+		var o = this,
+			url =  'http://ip-geo.appspot.com/geo_data.js',
+			loc, city, country;
+ 
+		$.getScript(url, function() {
+			var geo = com.unitedCoders.geo,
+				loc,
+				l;
+    				
+			if(geo.hasOwnProperty('ll')) {
+				if(!window['com'] || !com['unitedCoders']) {
+					o.showError(o.msg.error_occurred);
+					return;
+				}
+				var geo = com.unitedCoders.geo,
+					loc,
+					location,
+					l;
+				
+				if(geo.hasOwnProperty('ll')) {
+					geo = geo.ll;
+					l = geo.length - 1;
+					loc = geo[l];
+					city = loc.city;
+					country = loc.country;
+					location =  city + (o.config().showCountry ? ', ' + country : '');
+					o.setLocation(location, true);
+				}
+			}
+ 		});
+	}
+});</pre>
+	  		</div>
+  		</div>
+		
+		<div class="clearBoth"></div>		
+		
+		<hr/>
+		<a href="javascript:window.scroll(0,0);" class="top">top &uarr;</a>	
+
+    <div class="footer"></div>
+
+	 <!-- Do not copy script below: personal tracking code -->
+	<script type="text/javascript">
+	   var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-361231-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</body>
+</html>
